@@ -1,0 +1,52 @@
+
+.el_fondo {
+
+    background-color: #161B29;
+}
+
+.encabezado{
+    margin-top: 15px;
+}
+
+.el_titulo{
+    color: aliceblue;
+    border:2px solid black;
+    border-radius: 30px;
+    width: 80%;
+    margin: 0px 20px 15px 20px;
+    float: left;
+    text-align: center;
+    font-size: 40px;
+    font-style:vogue;
+    padding: 10px;
+    animation: el_titulo 1.5s .625s ease infinite;
+    box-shadow: inset 0vw 0vw 0vw .1vw #E645D0, 0vw 0vw 1.5vw 0vw #E645D0;
+}
+
+@keyframes el_titulo {
+    0%,
+    100%{}
+    50%{
+    box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+    }
+}
+
+
+img.logo_poli{
+    margin: 0px 20px 15px 20px;
+    width: 70px;
+    height:70px;
+}
+
+.logo_poli:hover {
+    animation: shake 0.3ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0%{transform: translate(2px,0px);}
+    25%{transform: translate(-4px,0px);}
+    50%{transform: translate(+2px,+2px);}
+    75%{transform: translate(0px,-4px);}
+    100%{transform: translate(0px,0px);}
+}

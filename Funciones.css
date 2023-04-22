@@ -1,22 +1,29 @@
+@font-face {
+    font-family: 'Leyton' ;
+    src: url("../Fonts/leyton/Leyton-Bold.otf");
+}
 
 .el_fondo {
-
     background-color: #161B29;
 }
 
 .encabezado{
-    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 24px;
+    place-items: center;
+
 }
 
 .el_titulo{
+    justify-self: stretch;
     color: aliceblue;
     border:2px solid black;
     border-radius: 30px;
-    width: 83%;
-    margin: 0px 20px 20px 20px;
     float: left;
     text-align: center;
     font-size: 40px;
+    font-family: 'Leyton';
     padding: 10px;
     animation: el_titulo 1.5s .625s ease infinite;
     box-shadow: inset 0vw 0vw 0vw .1vw #E645D0, 0vw 0vw 1.5vw 0vw #E645D0;
@@ -25,7 +32,7 @@
 .tabla{
     color: aqua;
     border:2px solid rgb(37, 253, 55);
-    margin: 0px 0px 0px 600px;
+    margin: auto;
     width: 40%;
     border-radius: 10px;
     text-align: center;
@@ -61,9 +68,9 @@ img.funcionx {
 
 
 img.logo_poli{
-    margin: 0px 20px 45px 192px;
-    width: 70px;
-    height:70px;
+    place-self: center;
+    width: 100px;
+    height:100px;
 }
 
 .logo_poli:hover {

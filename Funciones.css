@@ -1,71 +1,44 @@
+@font-face {
+    font-family: 'Vogue' ;
+    src: url("../../../Fuentes/Vogue.ttf");
+}
 
 .el_fondo {
-
     background-color: #161B29;
 }
 
 .encabezado{
-    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-gap: 24px;
+    margin: 0;
 }
 
 .el_titulo{
     color: aliceblue;
     border:2px solid black;
     border-radius: 30px;
-    width: 83%;
-    margin: 0px 20px 20px 20px;
-    float: left;
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
+    font-family: 'Vogue';
     padding: 10px;
-    animation: el_titulo 1.5s .625s ease infinite;
-    box-shadow: inset 0vw 0vw 0vw .1vw #E645D0, 0vw 0vw 1.5vw 0vw #E645D0;
-}
-
-.tabla{
-    color: aqua;
-    border:2px solid rgb(37, 253, 55);
-    margin: 0px 0px 0px 600px;
-    width: 50%;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-caption, td, th {
-    padding: 0.1em;
- }
-th {
-    background: #ca9e9ea6;
- }
-
-.tabla_imagenes{
-    width: 50%;
-}
-
-img.funcionx {
-    filter: grayscale(0%);
-}
-
-.funcionx:hover{
-    transition: all 0.5s ease;
-    filter: grayscale(100%);
+    margin: 0px 0px 20px 0px;
+    animation: el_titulo 1.5s ease infinite;
 }
 
 @keyframes el_titulo {
     0%,
-    100%{}
+    100%{box-shadow: inset 0vw 0vw 0vw .1vw #E645D0, 0vw 0vw 1.5vw 0vw #E645D0;}
     50%{
     box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
     }
 }
 
 
-img.logo_poli{
-    margin: 0px 20px 45px 192px;
-    width: 70px;
-    height:70px;
+.logo_poli{
+    place-self: start right;
+    width: 75px;
+    height: 75px;;
 }
 
 .logo_poli:hover {
@@ -79,6 +52,44 @@ img.logo_poli{
     50%{transform: translate(+2px,+2px);}
     75%{transform: translate(0px,-4px);}
     100%{transform: translate(0px,0px);}
+}
+
+.tabla{
+    color:black;
+    background-color: antiquewhite;
+    animation: el_titulo 1.5s ease infinite;
+    margin: auto;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    border-spacing: 20px;
+}
+
+thead{
+    border: 1px solid black;
+    animation: columna_sup 1.5s ease infinite;
+}
+
+@keyframes columna_sup{
+    0%,
+    100%{
+        color:  #e645d0;
+    }
+    50%{
+    color:  #17e1e6;
+    }
+}
+
+img.funcionx {
+    filter: grayscale(0%);
+    width: 75px;
+    height: 75px;
+}
+
+.funcionx:hover{
+    transition: all 0.5s ease;
+    filter: grayscale(100%);
 }
 
 .styled-table { 

@@ -12,10 +12,10 @@
     grid-template-columns: 6fr 1fr;
     grid-gap: 24px;
     margin: 0;
+    overflow: hidden;
 }
 
 .el_titulo{
-    color: aliceblue;
     border:2px solid black;
     border-radius: 30px;
     text-align: center;
@@ -23,22 +23,30 @@
     font-family: 'Vogue';
     padding: 10px;
     margin: 0px 0px 20px 0px;
-    animation: el_titulo 1.5s ease infinite;
+    animation: el_titulo 2.25s ease infinite;
 }
 
 @keyframes el_titulo {
     0%,
-    100%{box-shadow: inset 0vw 0vw 0vw .1vw #E645D0, 0vw 0vw 1.5vw 0vw #E645D0;}
-    50%{
-    box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+    100%{
+        box-shadow: inset 0vw 0vw 0vw .1vw #c2ff05, 0vw 0vw 1.5vw 0vw #c2ff05;
+        color: #c2ff05;
+    }
+    67%{
+        box-shadow: inset 0vw 0vw 0vw .1vw #e645d0, 0vw 0vw 1.5vw 0vw #e645d0;
+        color: #e645d0;
+    }
+    33%{
+        box-shadow: inset 0vw 0vw 0vw .1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
+        color: #17e1e6;
     }
 }
 
 
 .logo_poli{
-    place-self: start right;
-    width: 75px;
-    height: 75px;;
+    place-self: center right;
+    width: 70px;
+    height: 70px;;
 }
 
 .logo_poli:hover {
@@ -55,38 +63,45 @@
 }
 
 .tabla{
+    border-collapse: collapse;
     color:black;
     background-color: antiquewhite;
-    animation: el_titulo 1.5s ease infinite;
     margin: auto;
     width: 50%;
-    border-radius: 10px;
     text-align: center;
     font-size: 20px;
-    border-spacing: 20px;
+    border-radius: 15px;
 }
 
 thead{
-    animation: columna_sup 1.5s ease infinite;
+    background-color: black;
+    animation: columna_sup 2.25s ease infinite;
 }
 
 @keyframes columna_sup{
     0%,
     100%{
+        color: #c2ff05;
+    }
+    67%{
         color:  #e645d0;
     }
-    50%{
+    33%{
     color:  #17e1e6;
     }
 }
 
 img.funcionx {
-    filter: grayscale(0%);
+    transition: all 0.5s ease;
+    scale: 100%;
     width: 75px;
     height: 75px;
+    padding: 10px;
+    filter: grayscale(0%);
 }
 
 .funcionx:hover{
+    scale: 110%;
     transition: all 0.5s ease;
     filter: grayscale(100%);
 }

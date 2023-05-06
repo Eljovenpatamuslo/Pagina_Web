@@ -26,10 +26,74 @@
   <p></p>
 
 
+  <!-- A partir de aca esta todo robad.. ejem, digo, recopilado-->
+
+
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg nanbar-dark bg-dark">
+    <div class="container flex-column justify-content-center flex-sm-row justify-content-sm-between">
+      <a class="navbar-brand pt-0 fs-2" href="#">TASKS APP</a>
+      <ul class="navbar-nav">
+        <input class="form-control me-2" id="search" type="search" placeholder="Search your tasks" aria-label="Search">
+      </ul>
+    </div>
+  </nav>
+
+  <!-- TASKS SEARCH -->
+  <div class="container px-4">
+    <div class="card mt-4" id="task-result" style="width:50%;">
+      <div class="card-header fw-bold text-center">
+        Tasks Names
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush"></ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container p-4">
+    <div class="row">
+      <!-- ADD A TASK -->
+      <div class="col-md-5">
+        <div class="card">
+          <div class="card-body">
+            <form id="task-form">
+              <input type="hidden" id="taskId">
+              <input class="form-control mb-2" id="name" type="text" placeholder="Task Name">
+              <textarea class="form-control mb-2" id="description" cols="30" rows="10"
+                placeholder="Task Description"></textarea>
+              <button class="btn btn-primary w-100 text-center" type="submit">Save Task</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- SHOW ALL TASKS -->
+      <div class="col-md-7 table-responsive mt-md-0 mt-4">
+        <table class="table text-center table-bordered table-light table-striped table-sm">
+          <thead>
+            <tr>
+              <td class="fw-bold text-center">Id</td>
+              <td class="fw-bold text-center">Name</td>
+              <td class="fw-bold text-center">Description</td>
+              <td class="fw-bold text-center">Action</td>
+            </tr>
+          </thead>
+          <tbody id="all-tasks"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 
 
 
 
+
+  <!-- Hasta aca -->
 
   <div class="bg"></div>
   <div class="bg bg2"></div>

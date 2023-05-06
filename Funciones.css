@@ -113,6 +113,10 @@ thead{
   }
 }
 
+#especial td{
+  padding: 10px;
+}
+
 #especial tr:nth-child(even){
   background-color: rgb(58, 52, 179)
 }
@@ -196,5 +200,3 @@ html {
       transform:translateX(25%);
     }
   }
-
-

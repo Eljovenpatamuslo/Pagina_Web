@@ -25,7 +25,7 @@ $(document).ready(function () {
                     let template = '';
                     
                     tasks.forEach(task => {
-                        template += `<li class="list-group-item">${task.name}</li>`;
+                        template += `<li class="cajaResultados">${task.name}</li>`;
                     });
             
                     $('#task-result ul').html(template);

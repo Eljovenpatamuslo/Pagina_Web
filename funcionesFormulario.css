@@ -17,7 +17,7 @@
   grid-gap: 1px;
   margin: 100px 0px 100px 00px;
   overflow: hidden;
-  height: auto;
+  height: 200%;
 }
 
 .textoSemiTitulo {

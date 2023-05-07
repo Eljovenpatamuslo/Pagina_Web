@@ -29,6 +29,28 @@
   animation: texto 5s ease infinite;
 }
 
+.cajaResultados{
+  margin-top: 0px;
+  margin-left: 50px;
+  border-style: none;
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  margin: auto;
+  border-collapse: collapse;
+  color: black;
+  background: rgb(15, 11, 92);
+  animation: columna_sup 5s ease infinite;
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 15px;
+  animation: only-border 5s ease infinite;
+
+
+}
+
 
 
 
@@ -50,13 +72,15 @@
 
 }
 
-.barraMedia {
+.cajaMedia {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
   margin-top: 16px;
   margin-left: 480px;
-  /*margin: 0px;*/
+  padding: 30px;
   border-collapse: collapse;
   color: black;
-  /*background: rgb(15, 11, 92);*/
   animation: columna_sup 5s ease infinite;
   width: 50%;
   height: 100%;
@@ -68,8 +92,9 @@
 
 }
 
-.barra {
+.barraBusqueda {
   display: flex;
+  margin-top: 20px;
   flex-direction: column;
   border-style: none;
   list-style: none;
@@ -79,8 +104,8 @@
   background: rgb(15, 11, 92);
   animation: columna_sup 5s ease infinite;
   width: 100%;
-  height: 75%;
-  text-align: left;
+  height: 100%;
+  text-align: center;
   font-style: italic;
   font-size: 20px;
   border-radius: 15px;

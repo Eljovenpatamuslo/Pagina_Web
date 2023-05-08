@@ -103,6 +103,24 @@ img.funcionx {
 }
 
 
+.funciony{
+  place-self: center;
+  width: 70px;
+  height: 70px;;
+  transition: all 1s ease;
+  filter:brightness(100%);
+  filter: contrast(100%);
+  
+}
+
+.funciony:hover{
+  
+  transition: all 5s ease;
+  filter:brightness(100%);
+  filter: contrast(1000%);
+}
+
+
 html {
   height:100%;
 }

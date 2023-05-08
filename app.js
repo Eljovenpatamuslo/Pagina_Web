@@ -25,13 +25,23 @@ $(document).ready(function () {
                     let template = '';
                     
                     tasks.forEach(task => {
-                        template += `<li class="cajaLista">${task.name}</li>`;
+                        template += `<li class="cajaLista" style="width: 99.9%">${task.name}</li>`;
                     });
             
                     $('#task-result ul').html(template);
                 },
                 error: function (jqXHR, exception) {
                     console.log(jqXHR);
+
+
+
+                    let template = '';
+                    
+                    template += `<li class="texto">No se ha encontrado ningun usuario</li>`; //Claramente no entiendo javascript
+                                                                                             //porque esto no funciona xd
+                    
+                    $('#task-result ul').html(template);
+                    
                 }                                     
             });
         }

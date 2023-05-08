@@ -14,5 +14,5 @@
     //if ($connection) {
     //    echo "Database is connected.";
     //}
-
+//NO PONER EL DATABASE.PHP NUESTRO NO SEAN BOLUDOS
 ?>

@@ -5,9 +5,10 @@
 
 .formato2x1 {
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-gap: 300px;
-  margin: 20px 100px 20px 100px;
+  grid-template-columns: 5fr 5fr;
+  grid-gap: 50px;
+  grid-column: auto;
+  
   overflow: hidden;
 }
 
@@ -78,17 +79,26 @@
 
 
 .cajaAncha {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 50px;
+
+  
+  
+  
   margin-top: 16px;
   margin-left: 50px;
-  /*margin: 0px;*/
+  
+  
   border-collapse: collapse;
   color: black;
   /*background: rgb(15, 11, 92);*/
   animation: columna_sup 5s ease infinite;
   width: 95%;
   height: 50%;
-  font-size: 30px;
   border-radius: 15px;
+  text-align: center;
+  
 
   overflow: hidden;
   animation: only-border 5s ease infinite;

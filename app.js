@@ -37,7 +37,7 @@ $(document).ready(function () {
 
                     let template = '';
                     
-                    template += `<li class="texto">No se ha encontrado ningun usuario</li>`; //Claramente no entiendo javascript
+                    template += `<li style="list-style-type: none">No se ha encontrado ningun usuario</li>`; //Claramente no entiendo javascript
                                                                                              //porque esto no funciona xd
                     
                     $('#task-result ul').html(template);

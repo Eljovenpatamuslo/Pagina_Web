@@ -43,23 +43,7 @@
 
 
 
-  <!--Caja de busqueda y resultados-->
-  <div class="cajaMedia">
-
-    <ul id="barraBusqueda" style="margin-top: 25;">
-      <input class="barraBusqueda" id="search" type="search" placeholder="Buscar Usuario" aria-label="Search">
-    </ul>
-
-    <div class="cajaResultados" style="width: 85%" id="task-result">
-      <div class="card-header fw-bold text-center" style="font-size: 100%">
-        Usuarios encontrados:
-      </div>
-      <p></p>
-      <ul class="list-group list-group-flush">
-      </ul>
-    </div>
-
-  </div>
+  
 
 
   <!-- A partir de aca esta todo robad.. ejem, digo, recopilado-->
@@ -69,7 +53,7 @@
     
       <!-- ADD A TASK -->
 
-      <div class="col-md-4" style="margin:auto" style="width: 200%;">
+      <div class="col-md-12" style="margin-top: 0%;" style="width: 200%;">
         <div class="card">
           <div class="card-body">
             <form id="task-form">
@@ -84,7 +68,7 @@
       </div>
 
       <!-- SHOW ALL TASKS -->
-      <div class="col-md-7 table-responsive mt-md-0 mt-4">
+      <div class="col-md-15 table-responsive mt-md-0 mt-4">
         <table class="table text-center table-bordered table-light table-striped table-sm" style="margin: right">
           <thead>
             <tr>
@@ -103,6 +87,24 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="app.js"></script>
+
+  <!--Caja de busqueda y resultados-->
+  <div class="cajaMedia">
+
+    <ul id="barraBusqueda" style="margin-top: 25;">
+      <input class="barraBusqueda" id="search" type="search" placeholder="Buscar Usuario" aria-label="Search">
+    </ul>
+
+    <div class="cajaResultados" style="width: 85%" id="task-result">
+      <div class="card-header fw-bold text-center" style="font-size: 100%">
+        Usuarios encontrados:
+      </div>
+      <p></p>
+      <ul class="list-group list-group-flush">
+      </ul>
+    </div>
+
+  </div>
 
 
   <!-- Hasta aca -->

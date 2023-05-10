@@ -1,3 +1,37 @@
+--task
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+CREATE TABLE `task` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+ALTER TABLE `task`
+  ADD PRIMARY KEY (`id`);
+
+  ALTER TABLE `task`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+COMMIT;
+
+--users
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `pass` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `dni` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+  ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+COMMIT;
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/

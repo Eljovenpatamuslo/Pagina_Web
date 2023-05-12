@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     $('#users-form').submit(function (e) {
         e.preventDefault(); //Hacemos que no se refresque la página por defecto.
 
@@ -24,28 +23,28 @@ $(document).ready(function () {
             url: 'users-registrar.php',
             type: 'POST', 
             data: comprobar, 
-            success: function(response) { 
-               // let url = edit === s ? 1 : 0;
-                $('#users-form').trigger('reset');
+            success: function(response) {
+                if (response < 1){
+                    console.log("bien");
+                    $.ajax({
+                        url: 'users-add.php',
+                        type: 'POST', 
+                        data: postData, 
+                        success: function(response) { 
+                        location.replace("http://200.3.127.46:8002/~dos/");
+                    },
+                    error: function (jqXHR, exception) {
+                        console.log(jqXHR);
+                    }                   
+                });
+                } else {
+                    $('#users-form').trigger('reset');
+                    console.log("nombre,dni o mail repetido");
+                }
             },
             error: function (jqXHR, exception) {
                 console.log(jqXHR);
             }                   
         });
-
-        /*let algo = algo === false ? 'users-add.php' : 'task-update.php';
-
-        $.ajax({
-            url: 'users-add.php',
-            type: 'POST', 
-            data: postData, 
-            success: function(response) { 
-                $('#users-form').trigger('reset'); 
-            },
-            error: function (jqXHR, exception) {
-                console.log(jqXHR);
-            }                   
-        });*/
-
     });
 });

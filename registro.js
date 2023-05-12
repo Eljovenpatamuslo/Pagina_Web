@@ -11,7 +11,29 @@ $(document).ready(function () {
             mail: $('#mail').val(),
             dni: $('#dni').val()
         };
-        //console.log(postData);
+
+
+
+        let comprobar = { //lo que mandamos para saber si es repetido.
+            username: $('#username').val(),
+            mail: $('#mail').val(),
+            dni: $('#dni').val()
+        };
+
+        $.ajax({//si es repetido es verdadero de lo contario es falso
+            url: 'users-registrar.php',
+            type: 'POST', 
+            data: comprobar, 
+            success: function(response) { 
+               // let url = edit === s ? 1 : 0;
+                $('#users-form').trigger('reset');
+            },
+            error: function (jqXHR, exception) {
+                console.log(jqXHR);
+            }                   
+        });
+
+        /*let algo = algo === false ? 'users-add.php' : 'task-update.php';
 
         $.ajax({
             url: 'users-add.php',
@@ -23,7 +45,7 @@ $(document).ready(function () {
             error: function (jqXHR, exception) {
                 console.log(jqXHR);
             }                   
-        });
+        });*/
 
     });
 });

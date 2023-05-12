@@ -54,14 +54,15 @@
     <!-- ADD A TASK -->
 
     <div class="col-md-12" style="margin-top: 0%;" style="width: 200%;">
-      <div class="cajaAddTask">
-        <div class="card-body">
+      <div class="cajaAddTask" style="animation: none">
+        <div class="flexboxColumna">
           <form id="task-form">
             <input type="hidden" id="taskId">
-            <input class="cajaTaskName mb-2" id="name" type="text" placeholder="Task Name">
-            <textarea class="form-control mb-2" id="description" cols="30" rows="10"
-              placeholder="Task Description"></textarea>
-            <button class="btn btn-primary w-100 text-center" type="submit">Save Task</button>
+            <input class="cajaTaskName mb-2" style="background:none; height: 10%; border:none" id="name" type="text"
+              placeholder="Nombre de la Tarea">
+            <textarea class="cajaTaskName mb-2" style="height: 75%; background:none; border:none" id="description"
+              cols="30" rows="10" placeholder="Descripcion de la Tarea"></textarea>
+            <button class="botonEnviar" type="submit">Enviar</button>
           </form>
         </div>
       </div>

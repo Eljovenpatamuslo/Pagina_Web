@@ -104,7 +104,7 @@ $(document).ready(function () {
     }
 
     $(document).on('click', '.task-delete', function (e) {
-        if (confirm('conga conga soy conga sanz')) {
+        if (confirm('Estás seguro de tu decisión?')) {
             let element = $(this)[0].parentElement.parentElement;
             let id = $(element).attr('taskId');
 

@@ -17,8 +17,6 @@ $(document).ready(function () {
             success: function(response) { 
                 if (response > 0){
                     console.log("usuario encontrado");
-                    //let galleta = document.cookie = "#username=jesus; #pass=jesus123"
-                    console.log(galleta);
                     location.replace("http://200.3.127.46:8002/~dos/");
                 } else {
                     console.log("usuario no encontrado");

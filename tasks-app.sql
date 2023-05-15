@@ -21,6 +21,7 @@ COMMIT;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `age` int(3) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `dni` int(11) NOT NULL

@@ -12,7 +12,7 @@
         //Con real_escape_string evitamos inyección SQL.
         $search = $connection->real_escape_string($search);
         if (!empty($search)) {
-            $query = "SELECT * FROM task WHERE name LIKE '$search%'";
+            $query = "SELECT * FROM task WHERE username LIKE '$search%'";
             $result = mysqli_query($connection, $query);
         
             if (!$result) {
@@ -25,8 +25,10 @@
             while ($row = mysqli_fetch_array($result)) {
                 $json[] = array(
                     'id' => $row['id'],
-                    'name' => $row['name'],
-                    'description' => $row['description']  
+                    'username' => $row['username'],
+                    'age' => $row['age'],
+                    'mail' => $row['mail'],
+                    'dni' => $row['dni']  
                 );
             }
             //Para enviarlo al frontend necesito convertirlo a String. 

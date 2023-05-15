@@ -25,7 +25,7 @@ $(document).ready(function () {
                     let template = '';
                     
                     tasks.forEach(task => {
-                        template += `<li class="cajaLista" style="width: 99.9%">${task.name}</li>`;
+                        template += `<li class="cajaLista" style="width: 99.9%">${task.username}</li>`;
                     });
             
                     $('#task-result ul').html(template);
@@ -58,8 +58,10 @@ $(document).ready(function () {
 
         let postData = { //Lo que le enviaremos al servidor.
             id: $('#taskId').val(),
-            name: $('#name').val(),
-            description: $('#description').val()
+            username: $('#username').val(),
+            age: $('#age').val(),
+            mail: $('#mail').val(),
+            dni: $('#dni').val()
         };
         //console.log(postData);
 
@@ -95,9 +97,11 @@ $(document).ready(function () {
                         <tr taskId="${task.id}">
                             <td>${task.id}</td>
                             <td>
-                                <a href="#" class="task-item">${task.name}</a>
+                                <a href="#" class="task-item">${task.username}</a>
                             </td>
-                            <td>${task.description}</td>
+                            <td>${task.age}</td>
+                            <td>${task.mail}</td>
+                            <td>${task.dni}</td>
                             <td class="align-middle">
                                 <button class="task-delete btn btn-danger">
                                     Delete
@@ -115,7 +119,7 @@ $(document).ready(function () {
     }
 
     $(document).on('click', '.task-delete', function (e) {
-        if (confirm('Are you sure you want to delete it?')) {
+        if (confirm('conga conga soy conga sanz')) {
             let element = $(this)[0].parentElement.parentElement;
             let id = $(element).attr('taskId');
 
@@ -145,8 +149,10 @@ $(document).ready(function () {
             success: function (response) {
                 let task = JSON.parse(response);
                 $('#taskId').val(task.id); 
-                $('#name').val(task.name);
-                $('#description').val(task.description);  
+                $('#username').val(task.username);
+                $('#age').val(task.age);
+                $('#mail').val(task.mail);  
+                $('#dni').val(task.dni);    
                 edit = true;    
             },
             error: function (jqXHR, exception) {

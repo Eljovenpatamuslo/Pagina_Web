@@ -58,10 +58,14 @@
         <div class="flexboxColumna">
           <form id="task-form">
             <input type="hidden" id="taskId">
-            <input class="cajaTaskName mb-2" style="background:none; height: 10%; border:none" id="name" type="text"
-              placeholder="Nombre de la Tarea">
-            <textarea class="cajaTaskName mb-2" style="height: 75%; background:none; border:none; resize: none;" id="description"
-              cols="30" rows="10" placeholder="Descripcion de la Tarea"></textarea>
+            <input class="cajaTaskName mb-2" style="background:none; height: 10%; border:none" id="username" type="text"
+              placeholder="Nombre">
+            <input class="cajaTaskName mb-2" style="background:none; height: 10%; border:none" id="age" type="number"
+              placeholder="edad">
+            <input class="cajaTaskName mb-2" style="background:none; height: 10%; border:none" id="mail" type="email"
+              placeholder="E-Mail">
+            <input class="cajaTaskName mb-2" style="background:none; height: 10%; border:none" id="dni" type="number"
+              placeholder="DNI">  
             <button class="botonEnviar" type="submit">Enviar</button>
           </form>
         </div>
@@ -74,9 +78,11 @@
         <thead>
           <tr>
             <td class="fw-bold text-center">Id</td>
-            <td class="fw-bold text-center">Name</td>
-            <td class="fw-bold text-center">Description</td>
-            <td class="fw-bold text-center">Action</td>
+            <td class="fw-bold text-center">Nombre</td>
+            <td class="fw-bold text-center">Edad</td>
+            <td class="fw-bold text-center">E-Mail</td>
+            <td class="fw-bold text-center">DNI</td>
+            <td class="fw-bold text-center">Accion</td>
           </tr>
         </thead>
         <tbody id="all-tasks"></tbody>

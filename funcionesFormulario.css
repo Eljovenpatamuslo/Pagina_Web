@@ -237,3 +237,35 @@
   padding-left: 0px;
   margin: auto;
 }
+
+.tabla2{
+  border-collapse: collapse;
+  color:black;
+  background: rgb(15, 11, 92);
+  margin: auto;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Vogue';
+  border-radius: 15px;
+  overflow:hidden;
+  animation: only-border 5s ease infinite;
+}
+
+thead{
+  background-color: rgb(10, 14, 36);
+  animation: columna_sup 5s ease infinite;
+}
+
+#especial2 td{
+  padding: 6px;
+  }
+  
+  #especial2 tr:nth-child(even){
+  background-color: rgb(45, 39, 148)
+  }
+  
+  #especial2 tr{
+  animation: only-border 5s ease infinite;
+  }
+  
+ 

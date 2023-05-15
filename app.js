@@ -15,11 +15,12 @@ $(document).ready(function () {
                 success: function(response) { 
                     let tasks = JSON.parse(response);
                     let template = '';
-                    if (!(response)){
+                    if (response){
                     tasks.forEach(task => {
                         template += `<li class="cajaLista" style="width: 99.9%">${task.username}</li>`;
                     });
-                }else{
+                }
+                    if(template == ''){
                     template += `<li style="list-style-type: none">No se ha encontrado ningun usuario</li>`;
                 }
                     $('#task-result ul').html(template);

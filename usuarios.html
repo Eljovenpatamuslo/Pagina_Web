@@ -13,7 +13,7 @@
   
   
     <title>
-      Registrarse
+      Usuarios
     </title>
 </head>
 
@@ -25,24 +25,25 @@
         arrow_back
       </i>
     </a>
-    <p class="el_titulo">Registrate</p>
+    <p class="el_titulo">Lista de Usuarios</p>
     <a class="logo_poli" , href="http://www.ips.edu.ar" id="reg"><img class="logo_poli" src="Images/logo_poli_2020.png"
         id="Logo" /></a>
   </div>
   <p></p>
-  <div class="col-md-4" style="margin:auto" style="width: 200%;">
-      <div class="card-body tabla">
-        <form id="users-form">
-          <input type="hidden" id="usersId">
-          <input class="form-control mb-2" id="username" type="text" placeholder="Username">
-          <input class="form-control mb-2" id="pass" type="password" placeholder="Password">
-          <input class="form-control mb-2" id="age" type="number" placeholder="Edad">
-          <input class="form-control mb-2" id="mail" type="email" placeholder="E-Mail">
-          <input class="form-control mb-2" id="dni" type="number" placeholder="DNI">
-          <button class="btn btn-primary w-100 text-center" type="submit">Registrarse</button>
-        </form>
-      </div>
+    <div class="col-md-15 table-responsive mt-md-0 mt-4">
+    <table class="table text-center table-bordered table-light table-striped table-sm" style="margin: right">
+      <thead>
+        <tr>
+          <td class="fw-bold text-center">Nombre</td>
+          <td class="fw-bold text-center">Edad</td>
+          <td class="fw-bold text-center">E-mail</td>
+          <td class="fw-bold text-center">DNI</td>
+        </tr>
+      </thead>
+      <tbody id="all-users"></tbody>
+    </table>
   </div>
+</div>
   <p></p>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"

@@ -15,9 +15,26 @@ $(document).ready(function () {
             type: 'POST', 
             data: postData, 
             success: function(response) { 
-                if (response > 0){
+                let users = JSON.parse(response);
+                if (users > 0){
+                    $.ajax({//si es repetido es verdadero de lo contario es falso
+                        url: 'users-admin.php',
+                        type: 'POST', 
+                        data: postData, 
+                        success: function(response) { 
+                            let isadmin=JSON.parse(response);
+                            if (isadmin == 1){
+                                console.log("GENIAL");
+                            }
+                        },
+                        error: function (jqXHR, exception) {
+                            console.log(jqXHR);
+                        }                   
+                    });
                     console.log("usuario encontrado");
-                    location.replace("http://200.3.127.46:8002/~dos/");
+                   /*document.cookie = "firstname="+postData.username+";expires=Wed, 18 Dec 2026 12:00:00 GMT";
+                   console.log(document.cookie);*/
+                    //location.replace("http://200.3.127.46:8002/~dos/");
                 } else {
                     console.log("usuario no encontrado");
                     $('#users-form').trigger('reset');

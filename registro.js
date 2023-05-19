@@ -23,7 +23,8 @@ $(document).ready(function () {
             type: 'POST', 
             data: comprobar, 
             success: function(response) {
-                if (response < 1){
+                console.log(response);
+                if (response == 0){
                     console.log("bien");
                     $.ajax({
                         url: 'users-add.php',

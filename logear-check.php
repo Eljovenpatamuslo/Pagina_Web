@@ -13,7 +13,6 @@ if (!$result) {
 
 $json = mysqli_num_rows($result);
 
-       
 $jsonstring = json_encode($json);
 echo $jsonstring; 
 ?>

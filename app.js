@@ -20,7 +20,7 @@ $(document).ready(function () {
                         template += `<li class="cajaLista" style="width: 99.9%">${task.username}</li>`;
                     });
                 }
-                    if(template == ''){
+		    if(template == '')	{
                     template += `<li style="list-style-type: none">No se ha encontrado ningun usuario</li>`;
                 }
                     $('#task-result ul').html(template);
@@ -82,9 +82,7 @@ $(document).ready(function () {
                     template += `
                         <tr taskId="${task.id}">
                             <td>${task.id}</td>
-                            <td>
-                                <a href="#" class="task-item">${task.username}</a>
-                            </td>
+                            <td>${task.username}</td>
                             <td>${task.age}</td>
                             <td>${task.mail}</td>
                             <td>${task.dni}</td>
@@ -92,6 +90,10 @@ $(document).ready(function () {
                                 <button class="task-delete btn btn-danger">
                                     Delete
                                 </button>
+				                <button class="task-item btn btn-danger">
+                                    Edit
+                                </button>
+
                             </td>
                         </tr>`;
                 });
@@ -105,7 +107,6 @@ $(document).ready(function () {
     }
 
     $(document).on('click', '.task-delete', function (e) {
-        if (confirm('Estás seguro de tu decisión?')) {
             let element = $(this)[0].parentElement.parentElement;
             let id = $(element).attr('taskId');
 
@@ -121,7 +122,6 @@ $(document).ready(function () {
                     console.log(jqXHR);
                 }
             });      
-        }
     });
 
     $(document).on('click', '.task-item', function () {

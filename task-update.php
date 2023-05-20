@@ -1,8 +1,4 @@
 <?php
-
-    //En este archivo php nos encargaremos de actualizar
-    //la información de una tarea.
-
     include('database.php');
 
     $id = $_POST['id'];

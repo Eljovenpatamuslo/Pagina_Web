@@ -1,9 +1,4 @@
 <?php
-
-    //En este archivo php haremos una consulta a la base de datos,
-    //la cual nos traerá todas las tareas para que posteriormente,
-    //mediante js, las mostremos en el frontend.
-
     include('database.php');
 
     $query = "SELECT * from task";

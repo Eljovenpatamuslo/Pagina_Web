@@ -1,7 +1,4 @@
 <?php
-
-    //En este archivo php nos encargaremos de la eliminación de tareas.
-
     include('database.php');
 
     $id = $_POST['id'];

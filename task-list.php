@@ -1,9 +1,4 @@
 <?php
-
-    //En este archivo php haremos una consulta a la base de datos,
-    //la cual nos traerá todas las tareas para que posteriormente,
-    //mediante js, las mostremos en el frontend.
-
     include('database.php');
 
     $query = "SELECT * from task";
@@ -17,8 +12,10 @@
     while ($row = mysqli_fetch_array($result,1)) {
         $json[] = array(
             'id' => $row['id'],
-            'name' => $row['name'],
-            'description' => $row['description']  
+            'username' => $row['username'],
+            'age' => $row['age'],
+            'mail' => $row['mail'],
+            'dni' => $row['dni']  
         );
     }
            

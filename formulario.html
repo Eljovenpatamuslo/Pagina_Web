@@ -13,7 +13,7 @@
 
 
   <title>
-    Registrarse
+    Tablas
   </title>
 
 
@@ -26,12 +26,12 @@
 
     <!--El boton de atras-->
     <a class="barraFlecha" style="text-decoration: none" href="index.html" id="atras">
-      <i class="material-symbols-outlined">
+      <i class="material-symbols-outlined" style="margin:auto" onclick="history.back()">
         arrow_back
       </i>
     </a>
 
-    <p class="el_titulo">Registrarse en la Pagina</p>
+    <p class="el_titulo">Tablas para divertirse!</p>
     <a class="logo_poli" , href="http://www.ips.edu.ar" id="reg"><img class="logo_poli" src="Images/logo_poli_2020.png"
         id="Logo" /></a>
   </div>
@@ -42,6 +42,58 @@
 
 
 
+
+
+
+
+  <!-- A partir de aca esta todo robad.. ejem, digo, recopilado-->
+
+
+  <div class="cajaAncha p-4">
+
+    <!-- ADD A TASK -->
+
+    <div class="col-md-12" style="margin-top: 0%;" style="width: 200%;">
+      <div class="cajaAddTask" style="animation: none">
+        <div class="flexboxColumna">
+          <form id="task-form">
+            <input type="hidden" id="taskId">
+            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="username" type="text"
+              placeholder="Nombre">
+            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="age" type="number"
+              placeholder="edad">
+            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="mail" type="email"
+              placeholder="E-Mail">
+            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="dni" type="number"
+              placeholder="DNI">
+            <button class="botonEnviar" style="height: 10%;" type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOW ALL TASKS -->
+    <div class="col-md-15 table-responsive mt-md-0 mt-4">
+      <table id="especial2" class="tabla2" style="margin-top: 15px; width:98%; margin-bottom: 15px">
+        <thead>
+          <tr>
+            <th style="padding: 2px;"">ID</th>
+            <th style="padding: 2px;">Nombre</th>
+            <th style="padding: 2px;">Edad</th>
+            <th style="padding: 2px;">E-Mail</th>
+            <th style="padding: 2px;">DNI</th>
+            <th style="padding: 2px;">Accion</th>
+          </tr>
+        </thead>
+        <tbody id="all-tasks"></tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 
   <!--Caja de busqueda y resultados-->
   <div class="cajaMedia">
@@ -60,49 +112,6 @@
     </div>
 
   </div>
-
-
-  <!-- A partir de aca esta todo robad.. ejem, digo, recopilado-->
-
-
-  <div class="cajaAncha p-4">
-    
-      <!-- ADD A TASK -->
-
-      <div class="col-md-4" style="margin:auto" style="width: 200%;">
-        <div class="card">
-          <div class="card-body">
-            <form id="task-form">
-              <input type="hidden" id="taskId">
-              <input class="form-control mb-2" id="name" type="text" placeholder="Task Name">
-              <textarea class="form-control mb-2" id="description" cols="30" rows="10"
-                placeholder="Task Description"></textarea>
-              <button class="btn btn-primary w-100 text-center" type="submit">Save Task</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- SHOW ALL TASKS -->
-      <div class="col-md-7 table-responsive mt-md-0 mt-4">
-        <table class="table text-center table-bordered table-light table-striped table-sm" style="margin: right">
-          <thead>
-            <tr>
-              <td class="fw-bold text-center">Id</td>
-              <td class="fw-bold text-center">Name</td>
-              <td class="fw-bold text-center">Description</td>
-              <td class="fw-bold text-center">Action</td>
-            </tr>
-          </thead>
-          <tbody id="all-tasks"></tbody>
-        </table>
-      </div>
-    </div>
-  
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
 
 
   <!-- Hasta aca -->

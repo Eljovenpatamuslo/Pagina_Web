@@ -5,8 +5,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `task` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `age` int(3) COLLATE utf8_unicode_ci NOT NULL,
+  `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `dni` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 ALTER TABLE `task`
@@ -21,6 +23,7 @@ COMMIT;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `age` int(3) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `dni` int(11) NOT NULL

@@ -2,7 +2,7 @@
     include('database.php');
 
     $search = $_POST['search'];
-    
+
     if (isset($search)) {
         $search = $connection->real_escape_string($search);
         if (!empty($search)) {

@@ -1,20 +1,20 @@
 <?php
-
-    //En este archivo php nos encargaremos de añadir un nueva tarea
-    //en nuestra base de datos.
-
     include('database.php');
 
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+    $username = $_POST['username'];
+    $age = $_POST['age'];
+    $mail = $_POST['mail'];
+    $dni = $_POST['dni'];
 
-    //isset: determina si una variable está definida y no es null.
-    if (isset($name) && isset($description)) {
-        //Con real_escape_string evitamos inyección SQL.
-        $name = $connection->real_escape_string($name);
-        $description = $connection->real_escape_string($description);
-        if (!empty($name) && !empty($description)) {
-            $query = "INSERT into task(name, description) VALUES ('$name', '$description')";
+
+
+    if (isset($username) && isset($mail) && isset($dni) && isset($age)) {
+        $username = $connection->real_escape_string($username);
+        $mail = $connection->real_escape_string($mail);
+        $dni = $connection->real_escape_string($dni);
+        $age = $connection->real_escape_string($age);
+        if (!empty($username) && !empty($mail) && !empty($dni) && !empty($age)) {
+            $query = "INSERT into task(username, age, mail, dni) VALUES ('$username', '$age', '$mail', '$dni')";
             $result = mysqli_query($connection, $query);
 
             if(!$result) {

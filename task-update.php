@@ -1,16 +1,14 @@
 <?php
-
-    //En este archivo php nos encargaremos de actualizar
-    //la información de una tarea.
-
     include('database.php');
 
     $id = $_POST['id'];
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+    $username = $_POST['username'];
+    $mail = $_POST['mail'];
+    $dni = $_POST['dni'];
+    $age = $_POST['age'];
 
-    if (isset($id) && isset($name) && isset($description)) {
-        $query = "UPDATE task SET name = '$name', description = '$description' WHERE id = '$id'";
+    if (isset($id) && isset($username) && isset($age) && isset($mail) && isset($dni)) {
+        $query = "UPDATE task SET username = '$username', age = '$age', mail = '$mail', dni = '$dni' WHERE id = '$id'";
         $result = mysqli_query($connection, $query);
         
         if (!$result) {

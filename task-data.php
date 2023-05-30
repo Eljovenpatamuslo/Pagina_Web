@@ -1,8 +1,4 @@
 <?php
-
-    //En este archivo php nos encargaremos de devolver
-    //la información de una tarea dado un id.
-
     include('database.php');
 
     $id = $_POST['id'];
@@ -19,8 +15,10 @@
         while ($row = mysqli_fetch_array($result)) {
             $json[] = array(
                 'id' => $row['id'],
-                'name' => $row['name'],
-                'description' => $row['description']  
+                'username' => $row['username'],
+                'age' => $row['age'],
+                'mail' => $row['mail'],
+                'dni' => $row['dni']  
             );
         }
            

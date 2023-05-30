@@ -3,8 +3,11 @@
   src: url("Fuentes/Vogue.ttf");
 }
 
+
+
 .formato2x1 {
   display: grid;
+  position: absolute;
   grid-template-columns: 5fr 5fr;
   grid-gap: 50px;
   grid-column: auto;
@@ -94,6 +97,7 @@
   margin:auto;
   border-collapse: collapse;
   color: black;
+  background: rgb(15, 11, 92);
   animation: columna_sup 5s ease infinite;
   width: 95%;
   height: 50%;

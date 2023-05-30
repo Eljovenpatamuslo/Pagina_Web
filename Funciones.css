@@ -15,6 +15,17 @@
   overflow: hidden;
 }
 
+.barraLogin{
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  clear: both;
+  height: 50px;
+  margin: auto;
+  background: rgb(255, 255, 255);
+
+}
+
 .texto{
   font-size: 25px;
   text-align: center;
@@ -131,7 +142,7 @@ body {
 
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #03001c 50%, #00005c 50%, #140e08 100%);
+  background-image: linear-gradient(-60deg, #f37d2e 50%, #00005c 50%, #ffffff 100%);
   bottom:0;
   left:-50%;
   opacity:.5;

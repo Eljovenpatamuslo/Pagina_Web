@@ -99,11 +99,9 @@
   color: black;
   background: rgb(15, 11, 92);
   animation: columna_sup 5s ease infinite;
-  width: 95%;
-  height: 50%;
   border-radius: 15px;
   text-align: center;
-  overflow: hidden;
+  /*overflow: hidden;*/
   animation: only-border 5s ease infinite;
 
 }

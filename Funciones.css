@@ -16,13 +16,21 @@
 }
 
 .barraLogin{
+  background: rgb(15, 11, 92);
+  animation: only-border 5s ease infinite;
   position: sticky;
   top: 0px;
   width: 100%;
   clear: both;
-  height: 50px;
+  height: 100%;
+  padding: 0px;
+  z-index: 1;
+  /*padding-top: 8px;
+  padding-bottom: 5px;*/
+  
+  text-align: center;
   margin: auto;
-  background: rgb(255, 255, 255);
+  
 
 }
 
@@ -30,6 +38,7 @@
   font-size: 25px;
   text-align: center;
   font-family: 'Vogue';
+  padding-top: 5px;
   animation: texto 5s ease infinite;
 }
 
@@ -37,11 +46,13 @@ a{
   animation: texto 5s ease infinite;
 }
 .el_titulo{
+  background: rgb(15, 11, 92);
   border-radius: 30px;
   text-align: center;
   font-size: 50px;
   font-family: 'Vogue';
-  padding: 10px;
+  padding-top: 17px;
+  padding-bottom: 10px;
   margin: 10px;
   animation: el_titulo 5s ease infinite;
   box-shadow: 0px 5px white ;
@@ -79,10 +90,15 @@ a{
 thead{
   background-color: rgb(10, 14, 36);
   animation: columna_sup 5s ease infinite;
+  padding-top: 3px;
 }
 
 #especial td{
 padding: 10px;
+}
+
+#especial th{
+  padding-top: 6px;
 }
 
 #especial tr:nth-child(even){
@@ -240,8 +256,8 @@ h1 {
     @keyframes texto {
       0%,
       100%{
-          text-shadow: 4px 4px 2px #bb13fe83;
-          color: #bc13fe;
+        text-shadow: 4px 4px 2px #bb13fe83;
+        color: #bc13fe;
       }
       67%{
           text-shadow: 4px 4px 2px #e645d179;

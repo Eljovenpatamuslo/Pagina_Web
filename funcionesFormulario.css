@@ -257,6 +257,11 @@ thead{
   animation: columna_sup 5s ease infinite;
 }
 
+
+#especial2 th{
+  padding-top: 6px;
+}
+
 #especial2 td{
   padding: 6px;
   }

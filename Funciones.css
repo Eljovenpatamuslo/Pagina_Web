@@ -16,6 +16,8 @@
 }
 
 .barraLogin{
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
   background: rgb(15, 11, 92);
   animation: only-border 5s ease infinite;
   position: sticky;
@@ -64,6 +66,37 @@
   margin: 10px;
   animation: el_titulo 5s ease infinite;
   box-shadow: 0px 5px white ;
+}
+
+
+.dropbox {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropbox-content {
+  
+  /* margin:inherit; */
+  /* margin:auto; */
+  
+  display: none;
+  position: absolute;
+  background: rgb(15, 11, 92);
+  animation: only-border 5s ease infinite;
+  border-radius: 5px;
+  min-width: 50%;
+  
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  padding: 12px 16px;
+  
+  z-index: 2;
+}
+
+.dropbox:hover .dropbox-content {
+  display: block;
+  margin-left: 16%;
+  margin-top:2%;
 }
 
 

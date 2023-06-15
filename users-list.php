@@ -15,7 +15,7 @@
             'username' => $row['username'],
             'age' => $row['age'],
             'mail' => $row['mail'],
-            'dni' => $row['dni']  
+            'dni' => $row['dni'],
         );
     }
            

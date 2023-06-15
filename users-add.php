@@ -13,8 +13,11 @@
         $mail = $connection->real_escape_string($mail);
         $dni = $connection->real_escape_string($dni);
         $age = $connection->real_escape_string($age);
+
         if (!empty($username) && !empty($pass) && !empty($mail) && !empty($dni) && !empty($age)) {
-            $query = "INSERT into users(username, age, pass, mail, dni) VALUES ('$username', '$age', '$pass', '$mail', '$dni')";
+            $hash = password_hash($pass,PASSWORD_DEFAULT);
+            echo "sd:".$hash;
+            $query = "INSERT into users(username, age, pass, mail, dni) VALUES ('$username', '$age', '$hash', '$mail', '$dni')";
             $result = mysqli_query($connection, $query);
 
             if(!$result) {

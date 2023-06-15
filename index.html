@@ -12,7 +12,7 @@
 
 <body class="el_fondo">
   <div class="barraLogin">
-    <div class="texto">hola muchas gracias</div>
+    <div class="texto_login">hola muchas gracias</div>
   </div>
   
 
@@ -26,8 +26,9 @@
         id="Logo" /></a>
   </div>
   <p></p>
-  <div class="texto">Para crear usuarios ficticios anda <a href="formulario.html">aca</a></div>
-  <div class="texto">Para ver la lista de usuarios registrados anda <a href="usuarios.html">aca</a></div>
+  <div class = "texto_cambio">Para crear usuarios ficticios anda <a href="formulario.html">aca</a></div>
+  <div class = "texto_cambio">Para ver la lista de usuarios registrados anda <a href="usuarios.html">aca</a></div>
+  <div onload="checkCookie()"></div>
   <p></p>
   <table id="especial" class="tabla">
     <thead>
@@ -75,11 +76,16 @@
     
   </p>
   <div style="padding-top: 5px; padding-bottom: 50px;">
-  <p class="texto" style="margin-bottom: 10px;">Logeate <a href="logearse.html" style="margin-bottom: 10px;">aca!</a></p>
+  <p class="texto_cambio" style="margin-bottom: 10px;">Logeate <a href="logearse.html" style="margin-bottom: 10px;">aca!</a></p>
   </div>
   <div class="bg"></div>
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="logear.js"></script>
+
 
 </body>
 

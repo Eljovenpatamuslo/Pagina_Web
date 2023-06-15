@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         if (search) {
             $.ajax({
-                url: 'task-search.php',
+                url: 'PHP/task-search.php',
                 type: 'POST',
                 data: {search: search}, 
                 success: function(response) { 
@@ -53,7 +53,7 @@ $(document).ready(function () {
             dni: $('#dni').val()
         };
 
-        let url = edit === false ? 'task-add.php' : 'task-update.php';
+        let url = edit === false ? 'PHP/task-add.php' : 'PHP/task-update.php';
 
         $.ajax({
             url: url, 
@@ -73,7 +73,7 @@ $(document).ready(function () {
 
     function fetchTasks () {
         $.ajax({
-            url: 'task-list.php',
+            url: 'PHP/task-list.php',
             type: 'GET',
             success: function (response) {
                 let tasks = JSON.parse(response);
@@ -111,7 +111,7 @@ $(document).ready(function () {
             let id = $(element).attr('taskId');
 
             $.ajax({
-                url: 'task-delete.php',
+                url: 'PHP/task-delete.php',
                 type: 'POST',
                 data: {id: id},
                 success: function (response) {
@@ -129,7 +129,7 @@ $(document).ready(function () {
         let id = $(element).attr('taskId');
 
         $.ajax({
-            url: 'task-data.php',
+            url: 'PHP/task-data.php',
             type: 'POST',
             data: {id: id},
             success: function (response) {

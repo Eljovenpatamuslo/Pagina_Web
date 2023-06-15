@@ -1,21 +1,6 @@
 $(document).ready(function () {
     fetchTasks();
 
-    function getCookie(cname) {
-        let name = cname + "=";
-        let ca = document.cookie.split(';');
-        for(let i = 0; i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
-    }
-
     $('#users-form').submit(function (e) {
         e.preventDefault(); //Hacemos que no se refresque la página por defecto.
 
@@ -29,7 +14,7 @@ $(document).ready(function () {
         };
 
         $.ajax({//si es repetido es verdadero de lo contario es falso
-            url: 'users-registrar.php',
+            url: 'PHP/users-registrar.php',
             type: 'POST', 
             data: postData, 
             success: function(response) {
@@ -37,7 +22,7 @@ $(document).ready(function () {
                 if (response == 0){
                     console.log("bien");
                     $.ajax({
-                        url: 'users-add.php',
+                        url: 'PHP/users-add.php',
                         type: 'POST', 
                         data: postData, 
                         success: function(response) { 
@@ -57,46 +42,33 @@ $(document).ready(function () {
             }                   
         });    
     });
-
+    
     function fetchTasks () {
         $.ajax({
-            url: 'users-list.php',
+            url: 'PHP/users-list.php',
             type: 'GET',
             success: function (response) {
                 let users = JSON.parse(response);
                 let template = '';
                 users.forEach(users => {
-                    if(getCookie("isadmin") == 1){
-                        template += `
-                        <tr usersId="${users.id}">
-                            <td>${users.username}</td>
-                            <td>${users.age}</td>
-                            <td>${users.mail}</td>
-                            <td>${users.dni}</td>
-                            <td class="align-middle">
-                            <button class="users-delete btn btn-danger">
-                                Delete
-                            </button>
-                            </td>
-                        </tr>`;
-                    }else{
                     template += `
                         <tr usersId="${users.id}">
                             <td>${users.username}</td>
                             <td>${users.age}</td>
                             <td>${users.mail}</td>
                             <td>${users.dni}</td>
-                            <td>Debes ser admin</td>
+                            <td class="align-middle">
+                                    Tenes que ser admin
+                            </td>
                         </tr>`;
-                    }
                 });
-                    
+                
                 $('#all-users').html(template);
             },
             error: function (jqXHR, exception) {
                 console.log(jqXHR);
             }
-        })
+        })    
     }
 
     $(document).on('click', '.users-delete', function (e) {
@@ -104,13 +76,11 @@ $(document).ready(function () {
         let id = $(element).attr('usersId');
         console.log(id);
         $.ajax({
-            url: 'users-delete.php',
+            url: 'PHP/users-delete.php',
             type: 'POST',
             data: {id: id},
             success: function (response) {
-                console.log("bien");
-                fetchTasks();     
-                console.log(response);   
+                fetchTasks();       
             },
             error: function (jqXHR, exception) {
                 console.log(jqXHR);

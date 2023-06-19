@@ -1,6 +1,5 @@
 <?php
     include('database.php');
-
     $query = "SELECT * FROM users";
     $result = mysqli_query($connection, $query);
 
@@ -14,6 +13,8 @@
 	    'id' => $row['id'],
             'username' => $row['username'],
             'mail' => $row['mail'],
+	    'admin' => $row['admin'],
+	    'block' => $row['block'],	
         );
     }
            

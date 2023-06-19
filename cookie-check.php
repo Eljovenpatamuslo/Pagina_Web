@@ -1,15 +1,26 @@
 <?php
-$Token = $_COOKIE['Token'];
-
+session_start();
+include('database.php');
+$Token = $_SESSION["Token"];
 if (isset($Token)) {
-    $queryid = "SELECT id from users WHERE pass = '$Token'";
+    $queryid = "SELECT * from users WHERE pass = '$Token'";
     $resultid =  mysqli_query($connection, $queryid);
 
     if(!$resultid) {
         die('Query Error'. msqli_error($connection));    
     }
 
-    $ids = mysqli_fetch_array($resultid,1);
-    $id = $ids['id'];
+    $rows = mysqli_fetch_array($resultid,1);
+    $_SESSION["id"] = $rows['id'];
+    $_SESSION["mail"] = $rows['mail'];
+    $_SESSION["admin"] = $rows['admin'];
+    $_SESSION["block"] = $rows['block'];
+
+
+    $ids = $_SESSION["id"];
+    $users = $_SESSION["user"];
+    $mails = $_SESSION["mail"];
+    $admins = $_SESSION["admin"];
+    $blocks = $_SESSION["block"];
 }
 ?>

@@ -1,3 +1,17 @@
+$.ajax({
+    url: 'PHP/admin.php',
+    type: 'GET',  
+    success: function(response) { 
+        let admin = JSON.parse(response);
+        if(admin==false){
+            alert("andate de aca");
+            location.replace("http://200.3.127.46:8002/~dos/");
+        }
+    },
+    error: function (jqXHR, exception) {
+        console.log(jqXHR);
+    }                   
+});
 $(document).ready(function () {
     fetchTasks();
 
@@ -11,7 +25,7 @@ $(document).ready(function () {
             mail: $('#mail').val(),
         };
 
-        $.ajax({//si es repetido es verdadero de lo contario es falso
+        $.ajax({
             url: 'PHP/users-registrar.php',
             type: 'POST', 
             data: postData, 
@@ -23,7 +37,8 @@ $(document).ready(function () {
                         type: 'POST', 
                         data: postData, 
                         success: function(response) { 
-                        location.replace("http://200.3.127.46:8002/~dos/");
+                        window.location = 'logearse.html';
+
                     },
                     error: function (jqXHR, exception) {
                         console.log(jqXHR);
@@ -48,12 +63,28 @@ $(document).ready(function () {
                 let users = JSON.parse(response);
                 let template = '';
                 users.forEach(users => {
-                    template += `
+                        template += `
                         <tr usersId="${users.id}">
                             <td>${users.username}</td>
                             <td>${users.mail}</td>
                             <td class="align-middle">
-                                    Tenes que ser admin
+                            <button class="give-block btn btn-danger">`
+                            if(users.block == 1){
+                                template += `Desbloquear`
+                            }else{
+                                template += `Bloquear`
+                            }
+                        template += 
+                                `</button>
+                                <button class="give-admin btn btn-danger">`
+                        if(users.admin == 1){
+                            template += `Quitar Admin`
+                        }else{
+                            template += `Agregar Admin`
+                        }
+
+                        template +=`</button>
+                                </td>
                             </td>
                         </tr>`;
                 });
@@ -63,14 +94,31 @@ $(document).ready(function () {
             error: function (jqXHR, exception) {
                 console.log(jqXHR);
             }
-        })    
+        });
     }
 
-    $(document).on('click', '.users-delete', function (e) {
+    $(document).on('click', '.give-block', function (e) {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('usersId');
         $.ajax({
-            url: 'PHP/users-delete.php',
+            url: 'PHP/users-block.php',
+            type: 'POST',
+            data: {id: id},
+            success: function (response) {
+                fetchTasks();       
+            },
+            error: function (jqXHR, exception) {
+                console.log(jqXHR);
+            }
+        });      
+
+    });
+
+    $(document).on('click', '.give-admin', function (e) {
+        let element = $(this)[0].parentElement.parentElement;
+        let id = $(element).attr('usersId');
+        $.ajax({
+            url: 'PHP/users-admin.php',
             type: 'POST',
             data: {id: id},
             success: function (response) {

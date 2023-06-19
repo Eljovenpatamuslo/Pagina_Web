@@ -1,13 +1,12 @@
 <?php
     include('database.php');
     include('cookie-check.php');
-
     $search = $_POST['search'];
 
     if (isset($search)) {
         $search = $connection->real_escape_string($search);
         if (!empty($search)) {
-            $query = "SELECT * FROM task WHERE username LIKE '$search%' AND user_id = '$id'";
+            $query = "SELECT * FROM task WHERE username LIKE '$search%' AND user_id = '$ids'";
             $result = mysqli_query($connection, $query);
         
             if (!$result) {

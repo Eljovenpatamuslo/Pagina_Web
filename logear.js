@@ -13,12 +13,8 @@ $(document).ready(function () {
             type: 'POST', 
             data: postData, 
             success: function(response) { 
-                let users = JSON.parse(response);
-                var rows = users[0];
-                var encrypted = users[1].pass;
+                let rows = JSON.parse(response);
                 if (rows > 0){
-                    document.cookie = "User="+postData.username+"; SameSite=None;";
-                    document.cookie = "Token="+encrypted+"; SameSite=None;";
                     location.replace("http://200.3.127.46:8002/~dos/");
                 } else {
                     $('#users-form').trigger('reset');

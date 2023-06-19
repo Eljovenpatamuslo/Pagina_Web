@@ -25,7 +25,10 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `admin` TINYINT(1) NOT NULL DEFAULT 0,
+  `block` TINYINT(1) NOT NULL DEFAULT 0
+
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 ALTER TABLE `users`

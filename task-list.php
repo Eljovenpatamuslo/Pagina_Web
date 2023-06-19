@@ -1,8 +1,7 @@
 <?php
     include('database.php');
     include('cookie-check.php');
-
-    $query = "SELECT * FROM task WHERE user_id = '$id';";
+    $query = "SELECT * FROM task WHERE user_id = '$ids'";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
@@ -21,5 +20,5 @@
     }
            
     $jsonstring = json_encode($json);
-    echo $jsonstring; 
+    echo $jsonstring;
 ?>

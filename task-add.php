@@ -14,7 +14,7 @@
         $age = $connection->real_escape_string($age);
 
         if (!empty($username) && !empty($mail) && !empty($dni) && !empty($age)) {
-            $query = "INSERT into task(username, age, mail, dni, user_id) VALUES ('$username', '$age', '$mail', '$dni','$id')";
+            $query = "INSERT into task(username, age, mail, dni, user_id) VALUES ('$username', '$age', '$mail', '$dni','$ids')";
             $result = mysqli_query($connection, $query);
 
             if(!$result) {

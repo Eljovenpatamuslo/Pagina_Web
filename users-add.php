@@ -12,7 +12,7 @@
 
         if (!empty($username) && !empty($pass) && !empty($mail)) {
             $hash = password_hash($pass,PASSWORD_DEFAULT);
-            $query = "INSERT into users(username, pass, mail) VALUES ('$username', '$hash', '$mail')";
+            $query = "INSERT into users(username, pass, mail,admin,block) VALUES ('$username', '$hash', '$mail','0','0')";
             $result = mysqli_query($connection, $query);
 
             if(!$result) {

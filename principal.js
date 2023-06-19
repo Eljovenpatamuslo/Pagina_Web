@@ -10,6 +10,7 @@ $(document).ready(function () {
         return null;
     }
     var cookie = readCookie("User");
+    console.log(readCookie("Token"));
     var paragraph = document.getElementById("pepe");
     if (cookie != null){
         var text = document.createTextNode("Bienvenido "+readCookie("User"));

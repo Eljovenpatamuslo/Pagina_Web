@@ -8,9 +8,7 @@ $(document).ready(function () {
             id: $('#usersId').val(),
             username: $('#username').val(),
             pass: $('#pass').val(),
-            age: $('#age').val(),
             mail: $('#mail').val(),
-            dni: $('#dni').val()
         };
 
         $.ajax({//si es repetido es verdadero de lo contario es falso
@@ -20,7 +18,6 @@ $(document).ready(function () {
             success: function(response) {
                 console.log(response);
                 if (response == 0){
-                    console.log("bien");
                     $.ajax({
                         url: 'PHP/users-add.php',
                         type: 'POST', 
@@ -54,9 +51,7 @@ $(document).ready(function () {
                     template += `
                         <tr usersId="${users.id}">
                             <td>${users.username}</td>
-                            <td>${users.age}</td>
                             <td>${users.mail}</td>
-                            <td>${users.dni}</td>
                             <td class="align-middle">
                                     Tenes que ser admin
                             </td>
@@ -74,7 +69,6 @@ $(document).ready(function () {
     $(document).on('click', '.users-delete', function (e) {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('usersId');
-        console.log(id);
         $.ajax({
             url: 'PHP/users-delete.php',
             type: 'POST',

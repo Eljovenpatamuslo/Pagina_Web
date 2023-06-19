@@ -18,9 +18,7 @@
                 $json[] = array(
                     'id' => $row['id'],
                     'username' => $row['username'],
-                    'age' => $row['age'],
                     'mail' => $row['mail'],
-                    'dni' => $row['dni']  
                 );
             }
 

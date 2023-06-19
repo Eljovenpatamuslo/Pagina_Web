@@ -1,7 +1,8 @@
 <?php
     include('database.php');
+    include('cookie-check.php');
 
-    $query = "SELECT * from task";
+    $query = "SELECT * FROM task WHERE user_id = '$id';";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {

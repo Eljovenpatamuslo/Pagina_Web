@@ -4,7 +4,6 @@ $(document).ready(function () {
         e.preventDefault(); //Hacemos que no se refresque la página por defecto.
 
         let postData = { //Lo que le enviaremos al servidor.
-            id: $('#taskId').val(),
             username: $('#username').val(),
             pass: $('#pass').val()
         };
@@ -15,8 +14,11 @@ $(document).ready(function () {
             data: postData, 
             success: function(response) { 
                 let users = JSON.parse(response);
-                if (users > 0){
+                var rows = users[0];
+                var encrypted = users[1].pass;
+                if (rows > 0){
                     document.cookie = "User="+postData.username+"; SameSite=None;";
+                    document.cookie = "Token="+encrypted+"; SameSite=None;";
                     location.replace("http://200.3.127.46:8002/~dos/");
                 } else {
                     $('#users-form').trigger('reset');

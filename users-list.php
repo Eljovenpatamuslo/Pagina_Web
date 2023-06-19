@@ -1,7 +1,7 @@
 <?php
     include('database.php');
 
-    $query = "SELECT * from users";
+    $query = "SELECT * FROM users";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
@@ -13,9 +13,7 @@
         $json[] = array(
 	    'id' => $row['id'],
             'username' => $row['username'],
-            'age' => $row['age'],
             'mail' => $row['mail'],
-            'dni' => $row['dni'],
         );
     }
            

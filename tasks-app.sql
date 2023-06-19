@@ -5,10 +5,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `task` (
   `id` int(11) NOT NULL,
-  `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `age` int(3) COLLATE utf8_unicode_ci NOT NULL,
   `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `dni` int(11) NOT NULL
+  `dni` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 ALTER TABLE `task`
@@ -23,11 +24,9 @@ COMMIT;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `age` int(3) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `dni` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
@@ -35,6 +34,7 @@ ALTER TABLE `users`
   ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
+
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/

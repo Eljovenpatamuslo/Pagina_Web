@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     let edit = false;
     fetchTasks ();
-
+    
     $('#search').keyup(function (e) {
         
         let search = $('#search').val();
@@ -50,9 +50,8 @@ $(document).ready(function () {
             username: $('#username').val(),
             age: $('#age').val(),
             mail: $('#mail').val(),
-            dni: $('#dni').val()
+            dni: $('#dni').val(),
         };
-
         let url = edit === false ? 'PHP/task-add.php' : 'PHP/task-update.php';
 
         $.ajax({

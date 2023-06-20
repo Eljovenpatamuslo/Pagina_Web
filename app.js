@@ -1,3 +1,18 @@
+$.ajax({
+    url: 'PHP/select.php',
+    type: 'GET',
+    success: function(response) { 
+        let data = JSON.parse(response);
+        if(data.block == 1 && data.block != null){
+            alert("estas bloqueado");
+            window.location = 'index.html';
+        }
+    },
+    error: function (jqXHR, exception) {
+        console.log(jqXHR);
+    }                   
+});
+
 $(document).ready(function () {
 
     let edit = false;

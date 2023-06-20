@@ -1,20 +1,14 @@
 $.ajax({
-    url: 'PHP/admin.php',
-    type: 'GET',  
+    url: 'PHP/select.php',
+    type: 'GET',
     success: function(response) { 
-        let admin = JSON.parse(response);
-        if(admin == null){
-             window.location = 'logearse.html';
-        }else if(admin == 1){
-            let admin1 = JSON.parse(response);
-            var paragraph = document.getElementById("admin");
-            if (admin1 != null){
-                let template = '';
-                template += `Para ver la lista de usuarios registrados anda <a href="usuarios.html">aca</a>`;
-                $('#admin').html(template);
-            }
-        
-            paragraph.appendChild(text);
+        let data = JSON.parse(response);
+        if(data.id == null){
+            window.location = 'logearse.html';
+        }else if (data.admin == 1){
+            let template = '';
+            template += `<a href="usuarios.html" class="texto_login">lista de usuarios </a>`;
+            $('#admin').html(template);
         }
     },
     error: function (jqXHR, exception) {
@@ -40,14 +34,13 @@ $(document).ready(function () {
     }
     
     $.ajax({
-        url: 'PHP/nombre.php',
+        url: 'PHP/select.php',
         type: 'GET',  
         success: function(response) { 
-            let nombre = JSON.parse(response);
-            var paragraph = document.getElementById("pepe");
-            if (nombre != null){
-                var text = document.createTextNode(nombre);
-            }
+            let data = JSON.parse(response);
+            let template = '';
+            template += `${data.user}`;
+            $('#pepe').html(template);
         
             paragraph.appendChild(text);
         },

@@ -1,9 +1,9 @@
 $.ajax({
-    url: 'PHP/admin.php',
+    url: 'PHP/select.php',
     type: 'GET',  
     success: function(response) { 
-        let admin = JSON.parse(response);
-        if(!(admin == true)){
+        let data = JSON.parse(response);
+        if(!(data.admin == true)){
              window.location = 'index.html';
         }
     },

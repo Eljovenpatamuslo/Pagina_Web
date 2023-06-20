@@ -24,4 +24,5 @@ if (isset($Token)) {
     $admins = $_SESSION["admin"];
     $blocks = $_SESSION["block"];
 }
+
 ?>

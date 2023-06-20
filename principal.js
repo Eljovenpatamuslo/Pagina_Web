@@ -1,5 +1,34 @@
-$(document).ready(function () {
+$.ajax({
+    url: 'PHP/admin.php',
+    type: 'GET',  
+    success: function(response) { 
+        let admin = JSON.parse(response);
+        if(admin == null){
+             window.location = 'logearse.html';
+        }
+    },
+    error: function (jqXHR, exception) {
+        console.log(jqXHR);
+    }                   
+});
 
+$(document).ready(function () { 
+    document.getElementById("cerrar-sesion").onclick = function() {cerrar()};
+
+    function cerrar() {
+        $.ajax({
+            url: 'PHP/cerrar_sesion.php',
+            type: 'GET',  
+            success: function(response) { 
+                location.reload();
+            },
+            error: function (jqXHR, exception) {
+                console.log(jqXHR);
+            }                   
+        });
+        return null;
+    }
+    
     $.ajax({
         url: 'PHP/nombre.php',
         type: 'GET',  
@@ -16,5 +45,4 @@ $(document).ready(function () {
             console.log(jqXHR);
         }                   
     });
-
 });

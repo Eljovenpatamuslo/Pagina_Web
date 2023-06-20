@@ -5,7 +5,7 @@ $username = $_POST['username'];
 $pass = $_POST['pass'];
 
 if (isset($username) && isset($pass)) {
-$query = "SELECT pass FROM users WHERE username = '$username'";
+$query = "SELECT pass FROM users WHERE username = '$username' OR mail = '$username'";
 $result = mysqli_query($connection, $query);
 
 $encrypted = mysqli_fetch_array($result,1);
@@ -18,7 +18,6 @@ $verify = password_verify($pass, $encrypted['pass']);
 if ($verify && $result){
      session_unset(); 
      $_SESSION["Token"] = $encrypted['pass'];
-     $_SESSION["user"] = $username;
      $json = mysqli_num_rows($result);
      $jsonstring = json_encode($json);
 }

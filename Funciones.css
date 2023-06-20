@@ -26,15 +26,19 @@
   width: 100%;
   clear: both;
   height: 100%;
-  padding: 0px;
   z-index: 1;
-  /*padding-top: 8px;
-  padding-bottom: 5px;*/
-  
   text-align: center;
   margin: auto;
-  
+}
 
+.celda{
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.celdaDerecha{
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .texto_login{
@@ -70,34 +74,36 @@
 }
 
 
-.dropbox {
+
+.dropdown {
   position: relative;
   display: inline-block;
-  
+  text-align: center;
 }
 
-.dropbox-content {
-  
-  /* margin:inherit; */
-  /* margin:auto; */
-  
+.dropdown-content {
   display: none;
   position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgb(15, 11, 92);
-  animation: only-border 5s ease infinite;
   border-radius: 5px;
-  min-width: 50%;
-  
-  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-  padding: 12px 16px;
-  
-  z-index: 2;
+  animation: only-border 5s ease infinite;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
-.dropbox:hover .dropbox-content {
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
   display: block;
-  margin-left: 16%;
-  margin-top:2%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 

@@ -4,7 +4,7 @@ $.ajax({
     success: function(response) { 
         let data = JSON.parse(response);
         if(data.block == 1 && data.block != null){
-            alert("estas bloqueado");
+            alert("Estas blockeado. Razón:"+data.razon);
             window.location = 'index.html';
         }
     },

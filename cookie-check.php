@@ -16,6 +16,7 @@ if (isset($Token)) {
     $_SESSION["admin"] = $rows['admin'];
     $_SESSION["block"] = $rows['block'];
     $_SESSION["user"] = $rows['username'];
+    $_SESSION["razon"] = $rows['razon_block'];
 
 
     $ids = $_SESSION["id"];
@@ -23,6 +24,7 @@ if (isset($Token)) {
     $mails = $_SESSION["mail"];
     $admins = $_SESSION["admin"];
     $blocks = $_SESSION["block"];
+    $razones = $_SESSION["razon"];
 }
 
 ?>

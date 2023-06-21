@@ -6,7 +6,7 @@
     if (isset($search)) {
         $search = $connection->real_escape_string($search);
         if (!empty($search)) {
-            $query = "SELECT * FROM task WHERE username LIKE '$search%' AND user_id = '$ids'";
+            $query = "SELECT * FROM task WHERE username LIKE '$search%' AND (user_id = '$ids' OR user_id = '1')";
             $result = mysqli_query($connection, $query);
         
             if (!$result) {

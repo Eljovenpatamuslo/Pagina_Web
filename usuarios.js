@@ -60,7 +60,7 @@ $(document).ready(function () {
     $(document).on('click', '.give-block', function (e) {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('usersId');
-        let razon = "se porto mal";
+        let razon = "";
         $.ajax({
             url: 'PHP/users-block.php',
             type: 'POST',

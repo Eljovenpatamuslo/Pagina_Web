@@ -6,7 +6,8 @@
             'user' => $users,
             'mail' => $mails,
             'admin' => $admins,
- 	        'block' => $blocks
+ 	        'block' => $blocks,
+            'razon' => $razones
         );
            
     $jsonstring = json_encode($json);

@@ -4,7 +4,7 @@
     $username = $_POST['username'];
     $mail = $_POST['mail'];
 
-    if (isset($username) && isset($mail) && isset($dni)) {
+    if (isset($username) && isset($mail)) {
         $query = "SELECT * FROM users WHERE username = '$username' OR mail = '$mail'";
         $result = mysqli_query($connection, $query);
 

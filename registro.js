@@ -16,7 +16,6 @@ $(document).ready(function () {
             type: 'POST', 
             data: postData, 
             success: function(response) {
-                console.log(response);
                 if (response == 0){
                     $.ajax({
                         url: 'PHP/users-add.php',
@@ -29,10 +28,11 @@ $(document).ready(function () {
                     error: function (jqXHR, exception) {
                         console.log(jqXHR);
                     }                   
-                });
-                } else {
+                    });
+                }else{
+                    let template = 'nombre o mail repetido';
+                    $('#incorrecto').html(template);
                     $('#users-form').trigger('reset');
-                    console.log("nombre,dni o mail repetido");
                 }
             },
             error: function (jqXHR, exception) {

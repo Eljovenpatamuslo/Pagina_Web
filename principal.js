@@ -41,8 +41,6 @@ $(document).ready(function () {
             let template = '';
             template += `${data.user}`;
             $('#pepe').html(template);
-        
-            paragraph.appendChild(text);
         },
         error: function (jqXHR, exception) {
             console.log(jqXHR);

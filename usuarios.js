@@ -24,17 +24,17 @@ $(document).ready(function () {
                         template += `
                         <tr usersId="${users.id}">
                             <td>${users.username}</td>
-                            <td>${users.mail}</td>
+                            <td>${users.mail}</td>    
                             <td class="align-middle">`
                         if(!(users.username == "admin")){    
-                        template += `<button class="give-block btn btn-danger" id="block">`
+                        template += `<input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" type="text" placeholder="Razon" required>
+                                        <button class="btn btn-danger give-block">`
                             if(users.block == 1 ){
                                 template += `Desbloquear`
                             }else{
                                 template += `Bloquear`
                             }
-                        template += 
-                                `</button>
+                        template +=`</button>
                                 <button class="give-admin btn btn-danger">`
                         if(users.admin == 1){
                             template += `Quitar Admin`
@@ -60,17 +60,19 @@ $(document).ready(function () {
     $(document).on('click', '.give-block', function (e) {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('usersId');
+        let razon = "se porto mal";
         $.ajax({
             url: 'PHP/users-block.php',
             type: 'POST',
-            data: {id: id},
+            data: {id: id,
+                   razon: razon},
             success: function (response) {
                 fetchTasks();       
             },
             error: function (jqXHR, exception) {
                 console.log(jqXHR);
             }
-        });      
+        }); 
 
     });
 

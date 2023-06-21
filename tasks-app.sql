@@ -38,6 +38,13 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
+--razones
+CREATE TABLE `blocked` (
+  `user_id` int(11) NOT NULL,
+  `razon` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/

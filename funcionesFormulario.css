@@ -3,8 +3,11 @@
   src: url("Fuentes/Vogue.ttf");
 }
 
+
+
 .formato2x1 {
   display: grid;
+  position: absolute;
   grid-template-columns: 5fr 5fr;
   grid-gap: 50px;
   grid-column: auto;
@@ -48,7 +51,7 @@
   padding-bottom: 20px;
   margin: auto;
   border-collapse: collapse;
-  color: black;
+  color: white;
   background: rgb(15, 11, 92);
   animation: columna_sup 5s ease infinite;
   width: 70%;
@@ -73,7 +76,7 @@
   padding-bottom: 15px;
   margin: auto;
   border-collapse: collapse;
-  color: black;
+  color: white;
   background: rgb(15, 11, 92);
   width: 100%;
   height: 100%;
@@ -93,13 +96,12 @@
   margin-left: 50px;*/
   margin:auto;
   border-collapse: collapse;
-  color: black;
+  color: white;
+  background: rgb(15, 11, 92);
   animation: columna_sup 5s ease infinite;
-  width: 95%;
-  height: 50%;
   border-radius: 15px;
   text-align: center;
-  overflow: hidden;
+  /*overflow: hidden;*/
   animation: only-border 5s ease infinite;
 
 }
@@ -113,7 +115,7 @@
   margin:auto;
   padding: 0px;
   border-collapse: collapse;
-  color: black;
+  color: white;
   animation: columna_sup 5s ease infinite;
   width: 100%;
   height: 100%;
@@ -133,7 +135,7 @@
   margin:auto;
   padding: 20px;
   border-collapse: collapse;
-  color: black;
+  color: white;
   animation: columna_sup 5s ease infinite;
   width: 100%;
   height: 100%;
@@ -147,7 +149,7 @@
   border-style: none;
   list-style: none;
   border-collapse: collapse;
-  color: black;
+  color: white;
   background: rgb(15, 11, 92);
   animation: columna_sup 5s ease infinite;
   width: 90%;
@@ -155,6 +157,7 @@
   font-size: large;
   text-align: center;
   border-radius: 10px;
+  animation: texto 5s ease infinite;
   animation: only-border 5s ease infinite;
 }
 
@@ -167,7 +170,7 @@
   margin:auto;
   padding: 30px;
   border-collapse: collapse;
-  color: black;
+  color: white;
   animation: columna_sup 5s ease infinite;
   width: 50%;
   height: 100%;
@@ -184,7 +187,7 @@
   list-style: none;
   margin: auto;
   border-collapse: collapse;
-  color: black;
+  color: white;
   background: rgb(15, 11, 92);
   animation: columna_sup 5s ease infinite;
   width: 100%;
@@ -203,7 +206,7 @@
   list-style: none;
   margin: 15px 10px 0px 10px;
   border-collapse: collapse;
-  color: black;
+  color: white;
   background: rgb(15, 11, 92);
   animation: columna_sup 5s ease infinite;
   width: 100%;
@@ -239,7 +242,7 @@
 
 .tabla2{
   border-collapse: collapse;
-  color:black;
+  color:white;
   background: rgb(15, 11, 92);
   margin: auto;
   text-align: center;
@@ -253,6 +256,11 @@
 thead{
   background-color: rgb(10, 14, 36);
   animation: columna_sup 5s ease infinite;
+}
+
+
+#especial2 th{
+  padding-top: 6px;
 }
 
 #especial2 td{

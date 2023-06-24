@@ -60,14 +60,11 @@
         <div class="flexboxColumna">
           <form id="task-form">
             <input type="hidden" id="taskId">
-            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="username" type="text"
-              placeholder="Nombre">
-            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="age" type="number"
-              placeholder="Edad">
-            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="mail" type="email"
-              placeholder="E-Mail">
-            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="dni" type="number"
-              placeholder="DNI">
+            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="name" type="text"
+              placeholder="Nombre de la tarea" required>
+            <textarea class="form-control mb-2" id="desc" cols="30" rows="10" placeholder="Descripción de la tarea" required></textarea>
+            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="date" type="datetime-local"
+              placeholder="Fecha de Entrega" required>
             <button class="botonEnviar" style="height: 10%;" type="submit">Enviar</button>
           </form>
         </div>
@@ -81,9 +78,8 @@
           <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Edad</th>
-            <th>E-Mail</th>
-            <th>DNI</th>
+            <th>DescripciÓn</th>
+            <th>Fecha de Entrega</th>
             <th>Accion</th>
           </tr>
         </thead>

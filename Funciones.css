@@ -103,7 +103,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 101%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: rgb(15, 11, 92);

@@ -3,8 +3,10 @@ $.ajax({
     type: 'GET',
     success: function(response) { 
         let data = JSON.parse(response);
-        if(data.block == 1 && data.block != null){
-            alert("Estas blockeado. Razón:"+data.razon);
+        if(data.block == 1){
+            alert("Estas blockeado. Razón: "+ data.razon);
+            window.location = 'index.html';
+        }else if (data.block == null){
             window.location = 'index.html';
         }
     },

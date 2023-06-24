@@ -39,7 +39,7 @@ $(document).ready(function () {
         success: function(response) { 
             let data = JSON.parse(response);
             let template = '';
-            template += `${data.user}`;
+            template += `<img width="100" height="100" src="Images/Users/${data.picture}"> ${data.user}`;
             $('#pepe').html(template);
         },
         error: function (jqXHR, exception) {

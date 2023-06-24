@@ -7,7 +7,8 @@
             'mail' => $mails,
             'admin' => $admins,
  	        'block' => $blocks,
-            'razon' => $razones
+            'razon' => $razones,
+            'picture' => $pictures
         );
            
     $jsonstring = json_encode($json);

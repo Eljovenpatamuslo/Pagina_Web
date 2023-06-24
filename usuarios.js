@@ -27,7 +27,7 @@ $(document).ready(function () {
                             <td>${users.mail}</td>    
                             <td class="align-middle">`
                         if(!(users.username == "admin")){    
-                        template += `<input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" type="text" placeholder="Razon" required>
+                        template += `<input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" type="text" id="${users.id}" placeholder="Razon" required>
                                         <button class="btn btn-danger give-block">`
                             if(users.block == 1 ){
                                 template += `Desbloquear`
@@ -35,13 +35,13 @@ $(document).ready(function () {
                                 template += `Bloquear`
                             }
                         template +=`</button>
-                                <button class="give-admin btn btn-danger">`
-                        if(users.admin == 1){
-                            template += `Quitar Admin`
-                        }else{
-                            template += `Agregar Admin`
+                            <button class="give-admin btn btn-danger">`
+                            if(users.admin == 1){
+                                template += `Quitar Admin`
+                            }else{
+                                template += `Agregar Admin`
+                            }
                         }
-                    }
                         template +=`</button>
                     
                                 </td>
@@ -56,11 +56,10 @@ $(document).ready(function () {
             }
         });
     }
-
     $(document).on('click', '.give-block', function (e) {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('usersId');
-        let razon = "";
+        let razon = document.getElementById(id).value;
         $.ajax({
             url: 'PHP/users-block.php',
             type: 'POST',
@@ -72,7 +71,7 @@ $(document).ready(function () {
             error: function (jqXHR, exception) {
                 console.log(jqXHR);
             }
-        }); 
+        });
 
     });
 

@@ -5,10 +5,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `task` (
   `id` int(11) NOT NULL,
-  `username` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `age` int(3) COLLATE utf8_unicode_ci NOT NULL,
-  `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `dni` int(11) NOT NULL,
+  `name` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `date` DATETIME NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -16,7 +15,7 @@ ALTER TABLE `task`
   ADD PRIMARY KEY (`id`);
 
   ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 --users
@@ -26,9 +25,10 @@ CREATE TABLE `users` (
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `picture` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `admin` TINYINT(1) NOT NULL DEFAULT 0,
-  `block` TINYINT(1) NOT NULL DEFAULT 0
-
+  `block` TINYINT(1) NOT NULL DEFAULT 0,
+  `razon_block` varchar(200) NOT NULL
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 ALTER TABLE `users`
@@ -38,12 +38,16 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
---razones
-CREATE TABLE `blocked` (
-  `user_id` int(11) NOT NULL,
-  `razon` varchar(200) COLLATE utf8_unicode_ci NOT NULL
-) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+--data
 
+CREATE TABLE `data` (
+  `user_id` int(11) NOT NULL,
+  `first_login` varchar(50) NOT NULL,
+  `last_login` varchar(50) NOT NULL,
+  `login_count` int(11) NOT NULL,
+  `last_blocked` varchar(50) NOT NULL
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+COMMIT;
 
 -- phpMyAdmin SQL Dump
 -- version 5.1.1

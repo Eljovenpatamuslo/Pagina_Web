@@ -40,7 +40,7 @@ $(document).ready(function () {
             let data = JSON.parse(response);
             let template = '';
             let template1 = '';
-            template += `<img width="100" height="100" src="Images/Users/${data.picture}">`;
+            template += `<img width="50" height="50" style="border-radius: 25px" src="Images/Users/${data.picture}">`;
             template1 += `<div class="texto_login">${data.user}</div>`;
             $('#foto').html(template);
             $('#user').html(template1);

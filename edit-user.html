@@ -1,5 +1,52 @@
-<html>
-conga cuando vea que tiene que hacer otra pagina 
+<!DOCTYPE html>
+<html lang="es">
 
-<h1>voy a matar al joven patamuslo</h1>
-<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="Funciones.css" type="text/css">
+  <link rel="stylesheet" href="funcionesFormulario.css" type="text/css">
+  <link rel="shortcut icon" href="Images/logo_poli_2020.png" />
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>
+    Usuario
+  </title> 
+</head>
+
+<body class="el_fondo">
+
+  <div class="encabezado">
+
+
+    <a class="barraFlecha" style="text-decoration: none" href="menu.html" id="atras">
+      <i class="material-symbols-outlined" style="margin:auto">
+        arrow_back
+      </i>
+    </a>
+    <p class="el_titulo">Usuario</p>
+    <a class="logo_poli" , href="http://www.ips.edu.ar" id="reg"><img class="logo_poli" src="Images/logo_poli_2020.png"
+        id="Logo" /></a>
+  </div>
+
+  <div class="flexboxColumna" style="width: 35%; height: 200%; padding: 0%; ; margin:auto;">
+    <div class="card-body" style="height: 200%;">
+      <form id="edit-form" enctype="multipart/form-data">
+        <input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" id="username" name="username" type="test" placeholder="Username" required>
+        <input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" id="mail" name="mail" type="email" placeholder="E-mail" required>
+        <input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" id="file" name="file" type="file" placeholder="Foto">
+        <button class="botonEnviar" style="height: 100%; width: 75%; margin-left: 12.5%;" type="submit">Confirmar cambios</button>
+      </form>
+    </div>
+</div>
+<div id="fotico"></div>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="edit-user.js"></script>
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@
     if (isset($search)) {
         $search = $connection->real_escape_string($search);
         if (!empty($search)) {
-            $query = "SELECT * FROM task WHERE username LIKE '$search%' AND (user_id = '$ids' OR $admins = '1')";
+            $query = "SELECT * FROM task WHERE name LIKE '$search%' AND (user_id = '$ids' OR $admins = '1')";
             $result = mysqli_query($connection, $query);
         
             if (!$result) {
@@ -18,7 +18,6 @@
                 $json[] = array(
                     'id' => $row['id'],
                     'name' => $row['name'],
-                    'date' => $row['date'],
                     'desc' => $row['desc']  
                 );
             }

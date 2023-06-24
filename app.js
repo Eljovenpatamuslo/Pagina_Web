@@ -34,7 +34,7 @@ $(document).ready(function () {
                     let template = '';
                     if (response){
                     tasks.forEach(task => {
-                        template += `<li class="cajaLista" style="width: 99.9%">${task.username}</li>`;
+                        template += `<li class="cajaLista" style="width: 99.9%">${task.name}</li>`;
                     });
                 }
 		    if(template == '')	{
@@ -66,7 +66,6 @@ $(document).ready(function () {
             id: $('#taskId').val(),
             name: $('#name').val(),
             desc: $('#desc').val(),
-            date: $('#date').val(),
         };
         let url = edit === false ? 'PHP/task-add.php' : 'PHP/task-update.php';
 
@@ -99,7 +98,6 @@ $(document).ready(function () {
                             <td>${task.id}</td>
                             <td>${task.name}</td>
                             <td>${task.desc}</td>
-                            <td>${task.date}</td>
                             <td class="align-middle">
                                 <button class="task-delete btn btn-danger">
                                     Delete
@@ -149,8 +147,7 @@ $(document).ready(function () {
                 let task = JSON.parse(response);
                 $('#taskId').val(task.id); 
                 $('#name').val(task.name);
-                $('#desc').val(task.desc);
-                $('#date').val(task.date);    
+                $('#desc').val(task.desc);   
                 edit = true;    
             },
             error: function (jqXHR, exception) {

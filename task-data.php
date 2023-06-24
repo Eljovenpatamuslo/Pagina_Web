@@ -16,7 +16,6 @@
             $json[] = array(
                 'id' => $row['id'],
                 'name' => $row['name'],
-                'date' => $row['date'],
                 'desc' => $row['description']  
             );
         }

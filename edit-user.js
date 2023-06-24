@@ -44,18 +44,30 @@ $(document).ready(function () {
         let postData = {
             username: $('#username').val(),
             mail: $('#mail').val(),
-            formData : formData,
         };
-        
+
         $.ajax({
-            url: 'PHP/users-update.php', 
-            type: 'POST', 
-            data: formData,
-            processData: false,
-            contentType: false,
+            url: 'PHP/users-registrar.php',
+            type: 'POST',
+            data: postData,  
             success: function(response) { 
-                fetchTasks ();
-               $('#task-form').trigger('reset'); 
+                let row = JSON.parse(response);
+                if(!(row > 0)){
+                $.ajax({
+                    url: 'PHP/users-update.php', 
+                    type: 'POST', 
+                    data: formData,postData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) { 
+                        fetchTasks ();
+                       $('#task-form').trigger('reset'); 
+                    },
+                    error: function (jqXHR, exception) {
+                        console.log(jqXHR);
+                    }                   
+                });
+            }
             },
             error: function (jqXHR, exception) {
                 console.log(jqXHR);

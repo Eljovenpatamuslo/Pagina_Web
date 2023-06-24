@@ -7,7 +7,7 @@ $.ajax({
             window.location = 'logearse.html';
         }else if (data.admin == 1){
             let template = '';
-            template += `<a href="usuarios.html" class="texto_login">lista de usuarios </a>`;
+            template += `<a href="usuarios.html" style="text-decoration:none;" class="texto_login">lista de usuarios </a>`;
             $('#admin').html(template);
         }
     },

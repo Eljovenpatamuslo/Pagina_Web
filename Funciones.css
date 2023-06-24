@@ -80,7 +80,15 @@
   flex-wrap: wrap;
   padding: 20px;
   justify-content: center;
+}
 
+.flexboxRow{
+  display: flex;
+  flex-direction: row;
+  row-gap: 50px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center;
 }
 
 

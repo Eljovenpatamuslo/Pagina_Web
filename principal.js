@@ -39,8 +39,11 @@ $(document).ready(function () {
         success: function(response) { 
             let data = JSON.parse(response);
             let template = '';
-            template += `<img width="100" height="100" src="Images/Users/${data.picture}"> ${data.user}`;
-            $('#pepe').html(template);
+            let template1 = '';
+            template += `<img width="100" height="100" src="Images/Users/${data.picture}">`;
+            template1 += `<div class="texto_login">${data.user}</div>`;
+            $('#foto').html(template);
+            $('#user').html(template1);
         },
         error: function (jqXHR, exception) {
             console.log(jqXHR);

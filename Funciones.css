@@ -125,7 +125,13 @@
   display: block;
 }
 
+.link{
+  text-decoration:none;
+}
 
+.link:hover{
+  text-decoration: underline;
+}
 
 .logo_poli{
   place-self: center;

@@ -1,19 +1,14 @@
-$.ajax({
-    url: 'PHP/select.php',
-    type: 'GET',  
-    success: function(response) { 
-        let data = JSON.parse(response);
-        if(!(data.admin == true)){
-             window.location = 'index.html';
-        }
-    },
-    error: function (jqXHR, exception) {
-        console.log(jqXHR);
-    }                   
-});
-$(document).ready(function () {
-    fetchTasks(); 
+$(document).ready(function () { 
+    fetchTasks();
     function fetchTasks () {
+    $.ajax({
+        url: 'PHP/select.php',
+        type: 'GET',  
+         success: function(response) { 
+            let data = JSON.parse(response);
+            if(data.admin == null){
+                 window.location = 'menu.html';
+            }
         $.ajax({
             url: 'PHP/users-list.php',
             type: 'GET',
@@ -23,10 +18,11 @@ $(document).ready(function () {
                 users.forEach(users => {
                         template += `
                         <tr usersId="${users.id}">
+                        <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>
                             <td>${users.username}</td>
                             <td>${users.mail}</td>    
                             <td class="align-middle">`
-                        if(!(users.username == "admin")){    
+                        if(!(users.id == 1) && data.admin == 1 && !(data.id == users.id)){    
                         template += `<input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" type="text" id="${users.id}" placeholder="Razon" required>
                                         <button class="btn btn-danger give-block">`
                             if(users.block == 1 ){
@@ -41,6 +37,8 @@ $(document).ready(function () {
                             }else{
                                 template += `Agregar Admin`
                             }
+                        }else{
+                            template += `Tenes que ser admin`;
                         }
                         template +=`</button>
                     
@@ -55,7 +53,13 @@ $(document).ready(function () {
                 console.log(jqXHR);
             }
         });
-    }
+        },
+        error: function (jqXHR, exception) {
+            console.log(jqXHR);
+        }                   
+    }); 
+}
+    
     $(document).on('click', '.give-block', function (e) {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('usersId');

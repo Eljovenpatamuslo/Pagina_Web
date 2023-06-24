@@ -5,11 +5,10 @@ $.ajax({
         let data = JSON.parse(response);
         if(data.id == null){
             window.location = 'logearse.html';
-        }else if (data.admin == 1){
-            let template = '';
-            template += `<a href="usuarios.html" class="link texto_login">lista de usuarios</a>`;
-            $('#admin').html(template);
         }
+        let template = '';
+        template += `<a href="usuarios.html" class="link texto_login">lista de usuarios</a>`;
+        $('#admin').html(template);
     },
     error: function (jqXHR, exception) {
         console.log(jqXHR);

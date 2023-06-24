@@ -7,10 +7,10 @@ $(document).ready(function () {
         success: function(response) { 
             let data = JSON.parse(response);
             if(data.user == null){
-                 window.location = 'index.html';
+                 window.location = 'menu.html';
             }
-            //document.getElementById('username').value = data.user ;
-           // document.getElementById('mail').value = data.mail;*/
+            document.getElementById('username').value = data.user ;
+            document.getElementById('mail').value = data.mail;
         },
         error: function (jqXHR, exception) {
             console.log(jqXHR);
@@ -40,6 +40,7 @@ $(document).ready(function () {
         var formf = document.getElementById("edit-form");
         var imagen = formf.querySelector('input[name="file"]');
         var formData = new FormData(formf);
+
         let postData = {
             username: $('#username').val(),
             mail: $('#mail').val(),

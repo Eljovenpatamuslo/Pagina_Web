@@ -1,7 +1,7 @@
 <?php
     include('database.php');
     include('cookie-check.php');
-    $query = "SELECT * FROM task WHERE (user_id = '$ids' OR $admins=1)";
+    $query = "SELECT * FROM task WHERE (user_id = '$ids' OR $admins = 1)";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
@@ -12,10 +12,9 @@
     while ($row = mysqli_fetch_array($result,1)) {
         $json[] = array(
             'id' => $row['id'],
-            'username' => $row['username'],
-            'age' => $row['age'],
-            'mail' => $row['mail'],
-            'dni' => $row['dni']  
+            'name' => $row['name'],
+            'date' => $row['date'],
+            'desc' => $row['description']  
         );
     }
            

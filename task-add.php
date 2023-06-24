@@ -2,19 +2,17 @@
     include('database.php');
     include('cookie-check.php');
 
-    $username = $_POST['username'];
-    $age = $_POST['age'];
-    $mail = $_POST['mail'];
-    $dni = $_POST['dni'];
+    $name = $_POST['name'];
+    $desc = $_POST['desc'];
+    $date = $_POST['date'];
 
-    if (isset($username) && isset($mail) && isset($dni) && isset($age)) {
-        $username = $connection->real_escape_string($username);
-        $mail = $connection->real_escape_string($mail);
-        $dni = $connection->real_escape_string($dni);
-        $age = $connection->real_escape_string($age);
+    if (isset($name) && isset($desc) && isset($date)) {
+        $name = $connection->real_escape_string($name);
+        $desc = $connection->real_escape_string($desc);
+        $date = $connection->real_escape_string($date);
 
-        if (!empty($username) && !empty($mail) && !empty($dni) && !empty($age)) {
-            $query = "INSERT into task(username, age, mail, dni, user_id) VALUES ('$username', '$age', '$mail', '$dni','$ids')";
+        if (!empty($name) && !empty($desc) && !empty($date)) {
+            $query = "INSERT into task(name, description, date, user_id, test) VALUES ('$name', '$desc', '$date','$ids','$date')";
             $result = mysqli_query($connection, $query);
 
             if(!$result) {

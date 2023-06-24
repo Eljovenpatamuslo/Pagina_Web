@@ -5,9 +5,9 @@ $.ajax({
         let data = JSON.parse(response);
         if(data.block == 1){
             alert("Estas blockeado. Razón: "+ data.razon);
-            window.location = 'index.html';
+            window.location = 'menu.html';
         }else if (data.block == null){
-            window.location = 'index.html';
+            window.location = 'menu.html';
         }
     },
     error: function (jqXHR, exception) {
@@ -64,10 +64,9 @@ $(document).ready(function () {
 
         let postData = { 
             id: $('#taskId').val(),
-            username: $('#username').val(),
-            age: $('#age').val(),
-            mail: $('#mail').val(),
-            dni: $('#dni').val(),
+            name: $('#name').val(),
+            desc: $('#desc').val(),
+            date: $('#date').val(),
         };
         let url = edit === false ? 'PHP/task-add.php' : 'PHP/task-update.php';
 
@@ -98,10 +97,9 @@ $(document).ready(function () {
                     template += `
                         <tr taskId="${task.id}">
                             <td>${task.id}</td>
-                            <td>${task.username}</td>
-                            <td>${task.age}</td>
-                            <td>${task.mail}</td>
-                            <td>${task.dni}</td>
+                            <td>${task.name}</td>
+                            <td>${task.desc}</td>
+                            <td>${task.date}</td>
                             <td class="align-middle">
                                 <button class="task-delete btn btn-danger">
                                     Delete
@@ -121,7 +119,6 @@ $(document).ready(function () {
             }
         })    
     }
-
     $(document).on('click', '.task-delete', function (e) {
             let element = $(this)[0].parentElement.parentElement;
             let id = $(element).attr('taskId');
@@ -151,10 +148,9 @@ $(document).ready(function () {
             success: function (response) {
                 let task = JSON.parse(response);
                 $('#taskId').val(task.id); 
-                $('#username').val(task.username);
-                $('#age').val(task.age);
-                $('#mail').val(task.mail);  
-                $('#dni').val(task.dni);    
+                $('#name').val(task.name);
+                $('#desc').val(task.desc);
+                $('#date').val(task.date);    
                 edit = true;    
             },
             error: function (jqXHR, exception) {

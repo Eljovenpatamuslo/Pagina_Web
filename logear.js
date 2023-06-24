@@ -15,7 +15,7 @@ $(document).ready(function () {
             success: function(response) { 
                 let rows = JSON.parse(response);
                 if (rows > 0){
-                    location.replace("http://200.3.127.46:8002/~dos/menu.html");
+                    window.location = 'menu.html';
                 } else {
                     $('#users-form').trigger('reset');
                 }

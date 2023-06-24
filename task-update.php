@@ -2,13 +2,12 @@
     include('database.php');
 
     $id = $_POST['id'];
-    $username = $_POST['username'];
-    $mail = $_POST['mail'];
-    $dni = $_POST['dni'];
-    $age = $_POST['age'];
+    $name = $_POST['name'];
+    $desc = $_POST['desc'];
+    $date = $_POST['date'];
 
-    if (isset($id) && isset($username) && isset($age) && isset($mail) && isset($dni)) {
-        $query = "UPDATE task SET username = '$username', age = '$age', mail = '$mail', dni = '$dni' WHERE id = '$id'";
+    if (isset($id) && isset($name) && isset($desc) && isset($date)) {
+        $query = "UPDATE task SET name = '$name', description = '$desc', date = '$date' WHERE id = '$id'";
         $result = mysqli_query($connection, $query);
         
         if (!$result) {

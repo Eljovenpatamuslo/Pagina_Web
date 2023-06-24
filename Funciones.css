@@ -85,18 +85,19 @@
 .flexboxRow{
   display: flex;
   flex-direction: row;
-  row-gap: 50px;
+  column-gap: 0.8em;
   flex-wrap: wrap;
-  padding: 20px;
   justify-content: center;
+  align-items: center;
 }
 
 
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
   text-align: center;
+  align-items: center;
 }
 
 .dropdown-content {

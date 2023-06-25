@@ -23,9 +23,7 @@ $(document).ready(function () {
         type: 'GET',  
         success: function(response) { 
             let data = JSON.parse(response);
-            template = '';
-            template +=`<center><img src="Images/Users/${data.picture}"></center>`;
-                        
+            template =`<center><img src="Images/Users/${data.picture}"></center>`;
             $('#fotico').html(template);
         },
         error: function (jqXHR, exception) {
@@ -52,7 +50,15 @@ $(document).ready(function () {
             contentType: false,
             success: function(response) { 
                 fetchTasks ();
-                $('#task-form').trigger('reset'); 
+                $('#task-form').trigger('reset');
+
+                let template =`<div class="texto_cambio">${response}</div>`;
+                $('#error').html(template);
+                setTimeout(()=> {
+                    template =``;
+                $('#error').html(template);
+                 }
+                 ,3000); 
             },
             error: function (jqXHR, exception) {
                 console.log(jqXHR);

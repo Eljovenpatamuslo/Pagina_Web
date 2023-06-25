@@ -4,7 +4,7 @@ $.ajax({
     success: function(response) { 
         let data = JSON.parse(response);
         if(data.id == null){
-            window.location = 'logearse.html';
+            window.location = 'index.html';
         }
         let template = '';
         template += `<a href="usuarios.html" class="link texto_login">lista de usuarios</a>`;

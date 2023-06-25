@@ -27,8 +27,6 @@ $(document).ready(function () {
             template +=`<img src="Images/Users/${data.picture}">`;
                         
             $('#fotico').html(template);
-            //document.getElementById('username').value = data.user ;
-           // document.getElementById('mail').value = data.mail;*/
         },
         error: function (jqXHR, exception) {
             console.log(jqXHR);
@@ -47,34 +45,20 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'PHP/users-registrar.php',
-            type: 'POST',
-            data: postData,  
+            url: 'PHP/users-update.php', 
+            type: 'POST', 
+            data: formData,postData,
+            processData: false,
+            contentType: false,
             success: function(response) { 
-                let row = JSON.parse(response);
-                if(!(row > 0)){
-                $.ajax({
-                    url: 'PHP/users-update.php', 
-                    type: 'POST', 
-                    data: formData,postData,
-                    processData: false,
-                    contentType: false,
-                    success: function(response) { 
-                        fetchTasks ();
-                       $('#task-form').trigger('reset'); 
-                    },
-                    error: function (jqXHR, exception) {
-                        console.log(jqXHR);
-                    }                   
-                });
-            }
+                fetchTasks ();
+                $('#task-form').trigger('reset'); 
             },
             error: function (jqXHR, exception) {
                 console.log(jqXHR);
             }                   
-        });
+        });                  
 
     });
-
 
 });

@@ -34,7 +34,7 @@ $(document).ready(function () {
                     let template = '';
                     if (response){
                     tasks.forEach(task => {
-                        template += `<li class="cajaLista" style="width: 99.9%">${task.name}</li>`;
+                        template += `<li class="cajaLista" style="width: 99.9%"><a href="#" class="task-item prueba" id ="${task.id}" >${task.name}</a></li>`;
                     });
                 }
 		    if(template == '')	{
@@ -100,10 +100,10 @@ $(document).ready(function () {
                             <td>${task.desc}</td>
                             <td class="align-middle">
                                 <button class="task-delete btn btn-danger">
-                                    Delete
+                                    Eliminar
                                 </button>
 				                <button class="task-item btn btn-danger">
-                                    Edit
+                                    Editar
                                 </button>
 
                             </td>
@@ -120,7 +120,6 @@ $(document).ready(function () {
     $(document).on('click', '.task-delete', function (e) {
             let element = $(this)[0].parentElement.parentElement;
             let id = $(element).attr('taskId');
-
             $.ajax({
                 url: 'PHP/task-delete.php',
                 type: 'POST',
@@ -138,7 +137,9 @@ $(document).ready(function () {
     $(document).on('click', '.task-item', function () {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('taskId');
-
+        if(id == null){
+            id = document.getElementsByClassName("prueba")[0].id;
+        }
         $.ajax({
             url: 'PHP/task-data.php',
             type: 'POST',

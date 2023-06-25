@@ -18,14 +18,18 @@ $(document).ready(function () {
                 users.forEach(users => {
                         template += `
                         <tr usersId="${users.id}">
-                        <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>
-                            <td>${users.username}</td>
-                            <td>${users.mail}</td>    
+                        <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>`
+                        if(users.admin == 1){
+                            template += `<td>&#9733; ${users.username} &#9733;</td>`
+                        }else{
+                            template += `<td>${users.username}</td>`
+                        }
+                        template += `<td>${users.mail}</td>    
                             <td class="align-middle">`
                         if(!(users.id == 1) && data.admin == 1 && !(data.id == users.id)){    
                         template += `<input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" type="text" id="${users.id}" placeholder="Razon" required>
                                         <button class="btn btn-danger give-block">`
-                            if(users.block == 1 ){
+                            if(users.block == 1){
                                 template += `Desbloquear`
                             }else{
                                 template += `Bloquear`

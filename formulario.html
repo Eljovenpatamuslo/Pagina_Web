@@ -28,12 +28,12 @@
 
     <!--El boton de atras-->
     <a class="barraFlecha" style="text-decoration: none" href="menu.html" id="atras">
-      <i class="material-symbols-outlined" style="margin:auto" onclick="history.back()">
+      <i class="material-symbols-outlined" style="margin:auto">
         arrow_back
       </i>
     </a>
 
-    <p class="el_titulo">Crear tablas</p>
+    <p class="el_titulo">Crear tareas</p>
     <a class="logo_poli" , href="http://www.ips.edu.ar" id="reg"><img class="logo_poli" src="Images/logo_poli_2020.png"
         id="Logo" /></a>
   </div>
@@ -62,10 +62,12 @@
             <input type="hidden" id="taskId">
             <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="name" type="text"
               placeholder="Nombre de la tarea" required>
-            <textarea class="form-control mb-2" id="desc" cols="30" rows="10" placeholder="Descripción de la tarea" required></textarea>
-            <input class="cajaTaskName mb-3" style="background:none; height: 10%; border:none" id="date" type="datetime-local"
-              placeholder="Fecha de Entrega" required>
-            <button class="botonEnviar" style="height: 10%;" type="submit">Enviar</button>
+            
+            <textarea class="cajaAddTask mb-3" id="desc" style="resize: none; font-size: 20px; border: none; padding: 10px 20px; height: 135%;" placeholder="Descripción de la tarea" required></textarea>
+            
+        
+
+            <button class="botonEnviar" style="height: 15%;" type="submit">Enviar</button>
           </form>
         </div>
       </div>
@@ -79,8 +81,7 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>DescripciÓn</th>
-            <th>Fecha de Entrega</th>
-            <th>Accion</th>
+            <th>Accion</th> 
           </tr>
         </thead>
         <tbody id="all-tasks"></tbody>

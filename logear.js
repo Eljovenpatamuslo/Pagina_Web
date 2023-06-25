@@ -14,9 +14,16 @@ $(document).ready(function () {
             data: postData, 
             success: function(response) { 
                 let rows = JSON.parse(response);
-                if (rows > 0){
+                if (rows == 1){
                     window.location = 'menu.html';
                 } else {
+                    template = `<div class="texto_cambio">No se encontro el usuario</div>`;
+                    $('#error').html(template);
+                    setTimeout(()=> {
+                        template =``;
+                    $('#error').html(template);
+                     }
+                     ,3000);
                     $('#users-form').trigger('reset');
                 }
             },

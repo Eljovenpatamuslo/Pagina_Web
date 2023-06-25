@@ -24,7 +24,7 @@ $(document).ready(function () {
         success: function(response) { 
             let data = JSON.parse(response);
             template = '';
-            template +=`<img src="Images/Users/${data.picture}">`;
+            template +=`<center><img src="Images/Users/${data.picture}"></center>`;
                         
             $('#fotico').html(template);
         },

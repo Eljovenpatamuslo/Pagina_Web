@@ -2,9 +2,9 @@ $(document).ready(function () {
 
 
     $('#users-form').submit(function (e) {
-        e.preventDefault(); //Hacemos que no se refresque la página por defecto.
+        e.preventDefault();
 
-        let postData = { //Lo que le enviaremos al servidor.
+        let postData = {
             id: $('#usersId').val(),
             username: $('#username').val(),
             pass: $('#pass').val(),
@@ -22,7 +22,7 @@ $(document).ready(function () {
                         type: 'POST', 
                         data: postData, 
                         success: function(response) { 
-                        window.location = 'logearse.html';
+                        window.location = 'index.html';
 
                     },
                     error: function (jqXHR, exception) {
@@ -30,9 +30,19 @@ $(document).ready(function () {
                     }                   
                     });
                 }else{
-                    let template = 'nombre o mail repetido';
-                    $('#incorrecto').html(template);
+                    let template = '';
                     $('#users-form').trigger('reset');
+                    if(response == 1){
+                        template += `<div class="texto_cambio">Nombre repetido</div>`; 
+                    }else{
+                        template += `<div class="texto_cambio">Mail repetido</div>`;
+                    }
+                    $('#error').html(template);
+                    setTimeout(()=> {
+                        template =``;
+                    $('#error').html(template);
+                     }
+                     ,3000);
                 }
             },
             error: function (jqXHR, exception) {

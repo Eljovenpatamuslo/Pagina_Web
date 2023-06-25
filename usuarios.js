@@ -6,8 +6,11 @@ $(document).ready(function () {
         type: 'GET',  
          success: function(response) { 
             let data = JSON.parse(response);
-            if(data.admin == null){
-                 window.location = 'menu.html';
+            if(data.block == 1){
+                alert("Estas blockeado. Razón: "+ data.razon);
+                window.location = 'menu.html';
+            }else if(data.block == null){
+                window.location = 'menu.html';
             }
         $.ajax({
             url: 'PHP/users-list.php',

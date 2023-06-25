@@ -5,13 +5,23 @@
     $mail = $_POST['mail'];
 
     if (isset($username) && isset($mail)) {
-        $query = "SELECT * FROM users WHERE username = '$username' OR mail = '$mail'";
+        $query = "SELECT * FROM users WHERE username = '$username'";
         $result = mysqli_query($connection, $query);
+        if (mysqli_num_rows($result) == 0){
+            $query2 = "SELECT * FROM users WHERE mail = '$mail'";
+            $result2 = mysqli_query($connection, $query2);
+            if(mysqli_num_rows($result2) == 0){
+                $json = 0; 
+            }else{
+                $json = 2;
+            }
+        }else{
+            $json = 1;
+        }
 
-        if (!$result) {
+        if (!$result && !$result2) {
             die('Query Error'. msqli_error($connection));    
         }
-$json = mysqli_num_rows($result);
 
     $jsonstring = json_encode($json);
     echo $jsonstring; 

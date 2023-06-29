@@ -32,10 +32,14 @@ $(document).ready(function () {
     });
 }
     $('#edit-form').submit(function (e) {
-        e.preventDefault(); 
-        var formf = document.getElementById("edit-form");
-        var imagen = formf.querySelector('input[name="file"]');
-        var formData = new FormData(formf);
+        e.preventDefault();
+        var user = document.getElementById('username').value;
+
+        var file = $('#file').get(0).files[0];
+        var newFileName = user+"."+file["name"].split('.').pop();
+
+        var formData = new FormData();
+        formData.append('file', file, newFileName);
 
         let postData = {
             username: $('#username').val(),

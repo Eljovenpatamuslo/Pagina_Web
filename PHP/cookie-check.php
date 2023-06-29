@@ -2,7 +2,8 @@
 session_start();
 include('database.php');
 $Token = $_SESSION["Token"];
-if (isset($Token)) {
+
+if (isset($Token) && $_SESSION["id"] == null) {
     $queryid = "SELECT * from users WHERE pass = '$Token'";
     $resultid =  mysqli_query($connection, $queryid);
 
@@ -18,15 +19,13 @@ if (isset($Token)) {
     $_SESSION["user"] = $rows['username'];
     $_SESSION["razon"] = $rows['razon_block'];
     $_SESSION["picture"] = $rows['picture'];
-
-
-    $ids = $_SESSION["id"];
-    $users = $_SESSION["user"];
-    $mails = $_SESSION["mail"];
-    $admins = $_SESSION["admin"];
-    $blocks = $_SESSION["block"];
-    $razones = $_SESSION["razon"];
-    $pictures = $_SESSION["picture"];
 }
 
+$ids = $_SESSION["id"];
+$users = $_SESSION["user"];
+$mails = $_SESSION["mail"];
+$admins = $_SESSION["admin"];
+$blocks = $_SESSION["block"];
+$razones = $_SESSION["razon"];
+$pictures = $_SESSION["picture"];
 ?>

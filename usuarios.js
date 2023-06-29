@@ -30,11 +30,13 @@ $(document).ready(function () {
                         template += `<td>${users.mail}</td>    
                             <td class="align-middle">`
                         if(!(users.id == 1) && data.admin == 1 && !(data.id == users.id)){    
-                        template += `<input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" type="text" id="${users.id}" placeholder="Razon" required>
-                                        <button class="btn btn-danger give-block">`
                             if(users.block == 1){
-                                template += `Desbloquear`
+                                template += `<p>Baneado por: ${users.razon}</p>
+                                <button class="btn btn-danger give-block" id="${users.id}">
+                                Desbloquear`
                             }else{
+                                template += `<input class="cajaTaskName mb-3" style="height: 100%; padding: 10px;" type="text" id="${users.id}" placeholder="Razon" required>
+                                        <button class="btn btn-danger give-block">`
                                 template += `Bloquear`
                             }
                         template +=`</button>

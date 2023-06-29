@@ -34,7 +34,7 @@ $(document).ready(function () {
                     let template = '';
                     if (response){
                     tasks.forEach(task => {
-                        template += `<li class="cajaLista" style="width: 99.9%"><a href="#" class="task-item prueba" id ="${task.id}" >${task.name}</a></li>`;
+                        template += `<li class="cajaLista" style="width: 99.9%"><a href="#" class="task-item prueba" taskId="${task.id}">${task.name}</a></li>`;
                     });
                 }
 		    if(template == '')	{
@@ -138,7 +138,7 @@ $(document).ready(function () {
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('taskId');
         if(id == null){
-            id = document.getElementsByClassName("prueba")[0].id;
+            id = $($(this)[0]).attr('taskId');
         }
         $.ajax({
             url: 'PHP/task-data.php',

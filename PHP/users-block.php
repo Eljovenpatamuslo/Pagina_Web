@@ -1,18 +1,18 @@
 <?php
     include('database.php');
-
+    include('cookie-check.php');
     $id = $_POST['id'];
     $razon = $_POST['razon'];
     $fecha = date('jS \of F Y h:i:s A');
     if (isset($id)) {
-        $query = "UPDATE users SET block = NOT block,razon_block = '$razon' WHERE id= '$id'";
-        $query1 = "UPDATE data SET last_blocked = '$fecha' WHERE user_id= '$id'";
+        $query = "UPDATE data INNER JOIN users ON users.id = data.user_id 
+        SET data.blocked_by = '$ids', users.block = NOT block, users.razon_block = '$razon', data.last_blocked = '$fecha'
+        WHERE users.id = '$id' AND data.user_id = '$id'";
 
         $result = mysqli_query($connection, $query);
-        $result1 = mysqli_query($connection, $query1);
-        if (!$result && !$result1) {
+        if (!$result) {
             die('Query Error'. msqli_error($connection));    
         }
-        echo "Task Deleted Successfully";
+        echo "Usuario Bloqueado";
     }
 ?>

@@ -21,7 +21,7 @@
             $row = mysqli_fetch_array($result2,1);
 	    $id = $row['id'];
             $fecha = date('jS \of F Y h:i:s A');
-            $query3 = "INSERT into data(user_id, first_login, last_login, login_count, last_blocked) VALUES ('$id','$fecha','','0','never')";
+            $query3 = "INSERT into data(user_id, first_login, last_login, login_count, last_blocked) VALUES ('$id','$fecha','','0','never','0')";
             $result3 = mysqli_query($connection, $query3);
 
             if(!$result && !$result2 && !$result3) {

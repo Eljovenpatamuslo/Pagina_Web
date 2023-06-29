@@ -24,9 +24,10 @@ if ($verify && $result){
      $result2 = mysqli_query($connection, $query2);
      session_unset(); 
      $_SESSION["Token"] = $encrypted_pass;
-     $json = mysqli_num_rows($result);
+     $json = 1;
+}else{
+      $json = 0;
 }
-$json = mysqli_num_rows($result);
 $jsonstring = json_encode($json);
 echo $jsonstring; 
 }

@@ -21,17 +21,23 @@ $(document).ready(function () {
                 users.forEach(users => {
                         template += `
                         <tr usersId="${users.id}">
-                        <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>`
+                        <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>
+                        <td>`
+                        if(data.admin == 1){
+                            template += `<button class="give-info">i</button>`
+                        }
                         if(users.admin == 1){
-                            template += `<td>&#9733; ${users.username} &#9733;</td>`
+                            template += `&#9733; ${users.username} &#9733;</td>`
                         }else{
-                            template += `<td>${users.username}</td>`
+                            template += `${users.username}</td>`
                         }
                         template += `<td>${users.mail}</td>    
                             <td class="align-middle">`
-                        if(!(users.id == 1) && data.admin == 1 && !(data.id == users.id)){    
+
+                        if(!(users.id == 1) && data.admin == 1 && !(data.id == users.id)){  
                             if(users.block == 1){
-                                template += `<p>Baneado por: ${users.razon}</p>
+                                template += `<p>Baneado por:pepe</p> 
+                                             <p>Razon:${users.razon}</p>
                                 <button class="btn btn-danger give-block" id="${users.id}">
                                 Desbloquear`
                             }else{
@@ -50,10 +56,26 @@ $(document).ready(function () {
                             template += `Tenes que ser admin`;
                         }
                         template +=`</button>
-                    
+                        
                                 </td>
                             </td>
-                        </tr>`;
+                        </tr>`
+                       if(data.admin == 1){
+                        template +=`<tr id="${-users.id}" style="display: none">
+                       <td>Registrado el:
+                       <p>${users.firstlogin}</p> 
+                       </td>
+                       <td>Ultima vez online:
+                       <p>${users.lastlogin}</p>
+                       </td>
+                       <td>Veces logeadas:
+                       <p>${users.logincount}</p>
+                       </td>
+                       <td>Ultima vez blockeado:
+                       <p>${users.lastblocked}</p>
+                       </td>
+                       </tr>`;
+                       }
                 });
                 
                 $('#all-users').html(template);
@@ -103,6 +125,16 @@ $(document).ready(function () {
             }
         });      
 
+    });
+
+    $(document).on('click', '.give-info', function (e) {
+        let element = $(this)[0].parentElement.parentElement;
+        let id = $(element).attr('usersId'); 
+        if(document.getElementById(-id).style.display == "none"){
+            document.getElementById(-id).style.display = "table-row";
+        }else{
+            document.getElementById(-id).style.display = "none";
+        }
     });
 
 });

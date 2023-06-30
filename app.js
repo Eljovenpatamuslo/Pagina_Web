@@ -34,7 +34,7 @@ $(document).ready(function () {
                     let template = '';
                     if (response){
                     tasks.forEach(task => {
-                        template += `<li class="cajaLista" style="width: 99.9%"><a href="#" class="task-item prueba" taskId="${task.id}">${task.name}</a></li>`;
+                        template += `<li class="cajaLista" style="width: 99.9%"><a href="#" class="task-item" taskId="${task.id}">${task.name}</a></li>`;
                     });
                 }
 		    if(template == '')	{

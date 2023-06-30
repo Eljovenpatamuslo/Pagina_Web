@@ -14,7 +14,7 @@ $(document).ready(function () {
             data: postData, 
             success: function(response) { 
                 let rows = JSON.parse(response);
-                if (rows == 1){
+                if (rows > 0){
                     window.location = 'menu.html';
                 } else {
                     template = `<div class="texto_cambio">No se encontro el usuario</div>`;

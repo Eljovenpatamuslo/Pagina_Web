@@ -18,77 +18,18 @@ $.ajax({
 $(document).ready(function () {
 
     let edit = false;
-    fetchTasks ();
+    fetchTasks ('');
     
     $('#search').keyup(function (e) {
-        
-        let search = $('#search').val();
-
-        if (search) {
-            $.ajax({
-                url: 'PHP/task-search.php',
-                type: 'POST',
-                data: {search: search}, 
-                success: function(response) { 
-                    let tasks = JSON.parse(response);
-                    let template = '';
-                    if (response){
-                    tasks.forEach(task => {
-                        template += `<li class="cajaLista" style="width: 99.9%"><a href="#" class="task-item" taskId="${task.id}">${task.name}</a></li>`;
-                    });
-                }
-		    if(template == '')	{
-                    template += `<li style="list-style-type: none">No se ha encontrado ningun usuario</li>`;
-                }
-                    $('#task-result ul').html(template);
-                },
-                error: function (jqXHR, exception) {
-                    console.log(jqXHR);
-
-                    let template = '';
-                    
-                    template += `<li style="list-style-type: none">No se ha encontrado ningun usuario</li>`; //Gracias quienseas por solucionar esto
-                    
-                    $('#task-result ul').html(template);
-                    
-                }                                     
-            });
-        }
-        else {
-            $('#task-result ul').html('');
-        }
+        let search = $(this).val();
+        fetchTasks(search);
     });
 
-    $('#task-form').submit(function (e) {
-        e.preventDefault(); 
-
-        let postData = { 
-            id: $('#taskId').val(),
-            name: $('#name').val(),
-            desc: $('#desc').val(),
-        };
-        let url = edit === false ? 'PHP/task-add.php' : 'PHP/task-update.php';
-
-        $.ajax({
-            url: url, 
-            type: 'POST', 
-            data: postData, 
-            success: function(response) { 
-                edit = false; 
-                fetchTasks ();
-                $('#task-form').trigger('reset'); 
-            },
-            error: function (jqXHR, exception) {
-                console.log(jqXHR);
-            }                   
-        });
-
-    });
-
-    function fetchTasks () {
+    function fetchTasks (search) {
         $.ajax({
             url: 'PHP/task-list.php',
-            type: 'GET',
+            type: 'POST',
+            data: {search: search},
             success: function (response) {
                 let tasks = JSON.parse(response);
                 let template = '';
@@ -117,6 +58,35 @@ $(document).ready(function () {
             }
         })    
     }
+
+
+    $('#task-form').submit(function (e) {
+        e.preventDefault(); 
+
+        let postData = { 
+            id: $('#taskId').val(),
+            name: $('#name').val(),
+            desc: $('#desc').val(),
+        };
+        let url = edit === false ? 'PHP/task-add.php' : 'PHP/task-update.php';
+
+        $.ajax({
+            url: url, 
+            type: 'POST', 
+            data: postData, 
+            success: function(response) { 
+                edit = false; 
+                fetchTasks ();
+                $('#task-form').trigger('reset'); 
+            },
+            error: function (jqXHR, exception) {
+                console.log(jqXHR);
+            }                   
+        });
+
+    });
+
+    
     $(document).on('click', '.task-delete', function (e) {
             let element = $(this)[0].parentElement.parentElement;
             let id = $(element).attr('taskId');

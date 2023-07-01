@@ -1,7 +1,10 @@
 <?php
     include('database.php');
     include('cookie-check.php');
-    $query = "SELECT * FROM task WHERE (user_id = '$ids' OR $admins = 1)";
+    $search = $_POST['search'];
+    $search = $connection->real_escape_string($search);
+
+    $query = "SELECT * FROM task WHERE name LIKE '" . $search . "%' AND (user_id = '$ids' OR $admins = 1)";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {

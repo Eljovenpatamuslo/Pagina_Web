@@ -1,6 +1,5 @@
 $(document).ready(function () {
     fetchTasks ();
-    
     $.ajax({
         url: 'PHP/select.php',
         type: 'GET',  
@@ -23,7 +22,7 @@ $(document).ready(function () {
         type: 'GET',  
         success: function(response) { 
             let data = JSON.parse(response);
-            template =`<center><img src="Images/Users/${data.picture}"></center>`;
+            template =`<center id="${data.id}"><img src="Images/Users/${data.picture}"></center>`;
             $('#fotico').html(template);
         },
         error: function (jqXHR, exception) {
@@ -33,10 +32,10 @@ $(document).ready(function () {
 }
     $('#edit-form').submit(function (e) {
         e.preventDefault();
-        var user = document.getElementById('username').value;
+	var id = document.getElementsByTagName("center")[0].id;
 
         var file = $('#file').get(0).files[0];
-        var newFileName = user+"."+file["name"].split('.').pop();
+        var newFileName = id+"."+file["name"].split('.').pop();
 
         var formData = new FormData();
         formData.append('file', file, newFileName);

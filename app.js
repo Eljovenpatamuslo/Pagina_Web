@@ -36,7 +36,7 @@ $(document).ready(function () {
                 tasks.forEach(task => {
                     template += `
                         <tr taskId="${task.id}">
-                            <td>${task.id}</td>
+                            <td>${task.username}</td>
                             <td>${task.name}</td>
                             <td>${task.desc}</td>
                             <td class="align-middle">

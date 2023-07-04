@@ -1,6 +1,12 @@
 $(document).ready(function () { 
-    fetchTasks();
-    function fetchTasks () {
+    fetchTasks ('');
+    
+    $('#search').keyup(function (e) {
+        let search = $(this).val();
+        fetchTasks(search);
+    });
+    
+    function fetchTasks (search) {
     $.ajax({
         url: 'PHP/select.php',
         type: 'GET',  
@@ -14,30 +20,32 @@ $(document).ready(function () {
             }
         $.ajax({
             url: 'PHP/users-list.php',
-            type: 'GET',
+            type: 'POST',
+            data: {search: search},
             success: function (response) {
                 let users = JSON.parse(response);
                 let template = '';
                 users.forEach(users => {
+                    if(data.admin == 1){
                         template += `
                         <tr usersId="${users.id}">
                         <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>
-                        <td>`
-                        if(data.admin == 1){
-                            template += `<button class="give-info">i</button>`
-                        }
+                        <td>
+                        <button class="give-info">i</button>`
+                        
                         if(users.admin == 1){
                             template += `&#9733; ${users.username} &#9733;</td>`
                         }else{
                             template += `${users.username}</td>`
                         }
+
                         template += `<td>${users.mail}</td>    
                             <td class="align-middle">`
 
-                        if(!(users.id == 1) && data.admin == 1 && !(data.id == users.id)){  
+                        if(!(users.id == 1) && !(data.id == users.id)){  
                             if(users.block == 1){
-                                template += `<p>Baneado por:pepe</p> 
-                                             <p>Razon:${users.razon}</p>
+                                template += `<p>Baneado por: ${users.blockedby}</p> 
+                                             <p>Razon: ${users.razon}</p>
                                 <button class="btn btn-danger give-block" id="${users.id}">
                                 Desbloquear`
                             }else{
@@ -53,15 +61,14 @@ $(document).ready(function () {
                                 template += `Agregar Admin`
                             }
                         }else{
-                            template += `Tenes que ser admin`;
+                            template += `No puedes realizar ninguna acciÓn`;
                         }
                         template +=`</button>
                         
                                 </td>
                             </td>
-                        </tr>`
-                       if(data.admin == 1){
-                        template +=`<tr id="${-users.id}" style="display: none">
+                        </tr>
+                       <tr id="${-users.id}" style="display: none">
                        <td>Registrado el:
                        <p>${users.firstlogin}</p> 
                        </td>
@@ -73,9 +80,24 @@ $(document).ready(function () {
                        </td>
                        <td>Ultima vez blockeado:
                        <p>${users.lastblocked}</p>
-                       </td>
-                       </tr>`;
-                       }
+                       </td>`
+
+                    }else{
+                        template += `
+                        <tr usersId="${users.id}">
+                        <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>`
+                        if(users.admin == 1){
+                            template += `<td>&#9733; ${users.username} &#9733;</td>`
+                        }else{
+                            template += `<td>${users.username}</td>`
+                        }
+                        template += `<td>${users.mail}</td>    
+                                    <td class="align-middle">
+                                    Tenes que ser admin
+                                    </td>
+                            </td>
+                        </tr>`
+                    }
                 });
                 
                 $('#all-users').html(template);

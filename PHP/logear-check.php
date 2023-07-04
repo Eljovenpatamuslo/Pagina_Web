@@ -1,4 +1,5 @@
 <?php
+session_name("holasoylucaslambertiagustinjaffrealejandrocombasansysantiagogimenezbuenasnoches");
 session_start();
 include('database.php');
 $username = $_POST['username'];

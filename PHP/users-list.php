@@ -1,11 +1,14 @@
 <?php
     include('database.php');
     include('cookie-check.php');
-    $query = "SELECT * FROM users INNER JOIN data ON users.id=data.user_id";
+    $search = $_POST['search'];
+    $search = $connection->real_escape_string($search);
+
+    $query = "SELECT * FROM users INNER JOIN data ON users.id=data.user_id WHERE users.username LIKE '" . $search . "%'";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
-  //      die('Query Error'. msqli_error($connection));    
+      die('Query Error'. msqli_error($connection));    
     }
 
     $json = array();
@@ -23,7 +26,7 @@
           'lastlogin' => $row['last_login'],
           'logincount' => $row['login_count'],	
           'lastblocked' => $row['last_blocked'],
-          'blockedby' => $row['blocked by'],			
+          'blockedby' => $row['blocked_by'],			
           );
       }else{
         $json[] = array(

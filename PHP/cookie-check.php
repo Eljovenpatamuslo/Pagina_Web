@@ -1,9 +1,10 @@
 <?php
+session_name("holasoylucaslambertiagustinjaffrealejandrocombasansysantiagogimenezbuenasnoches");
 session_start();
 include('database.php');
 $Token = $_SESSION["Token"];
 
-if (isset($Token) && $_SESSION["id"] == null) {
+if (isset($Token)) {
     $queryid = "SELECT * from users WHERE pass = '$Token'";
     $resultid =  mysqli_query($connection, $queryid);
 

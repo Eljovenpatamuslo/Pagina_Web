@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Funciones.css" type="text/css">
   <link rel="stylesheet" href="funcionesFormulario.css" type="text/css">
   <link rel="shortcut icon" href="Images/logo_poli_2020.png" />
@@ -19,13 +20,50 @@
 </head>
 
 <body class="el_fondo">
-  <div class="encabezado">
+<div class="barraLogin">
+    
+    
+    <div class="flexboxColumna">
+    <a href="menu.html" class="link texto_login">Inicio</a>
+    </div>
 
-    <a class="barraFlecha" style="text-decoration: none" href="menu.html" id="atras">
-      <i class="material-symbols-outlined" style="margin:auto" onclick="history.back()">
-        arrow_back
-      </i>
-    </a>
+    <div class="flexboxColumna" id="admin"><a href="usuarios.html" class="link texto_login">lista de usuarios</a></div> 
+
+
+    <div class="flexboxColumna">
+    <a href="formulario.html" class="link texto_login">Tabla de Tareas</a>    
+    </div>
+
+    <div class="flexboxColumna">
+    
+    </div>
+
+    <div class="flexboxColumna">
+    
+    </div>
+
+    <div class="flexboxColumna" style="padding: 0px 20px 0px 20px">
+    <div class="dropdown" style="height: 100%; width: fit-content; margin: 0 auto">
+
+      <div class="flexboxRow">
+        <div id="foto"><img width="50" height="50" style="border-radius: 25px" src="Images/Users/1.gif"></div>
+        <div id="user"><div class="texto_login">admin</div></div>
+      </div>
+
+      <div class="dropdown-content">     
+
+        <a class="texto_login" href="edit-user.html">Editar Usuario</a>
+        <a class="texto_login" href="#" id="cerrar-sesion">Logout</a>
+
+      </div>
+
+    </div>
+    </div>
+
+  </div>
+  <div class="encabezado">
+<a class="logo_poli" , href="http://www.ips.edu.ar" id="reg"><img class="logo_poli" src="Images/logo_poli_2020.png"
+        id="Logo" /></a>
     <p class="el_titulo">Lista de Usuarios</p>
     <a class="logo_poli" , href="http://www.ips.edu.ar" id="reg"><img class="logo_poli" src="Images/logo_poli_2020.png"
         id="Logo" /></a>
@@ -47,6 +85,13 @@
       <tbody id="all-users"></tbody>
     </table>
   </div>-->
+
+  <div class="cajaMedia">
+    <ul id="barraBusqueda" style="margin-top: 25;">
+      <input class="barraBusqueda" id="search" type="search" placeholder="Buscar Usuario" aria-label="Search">
+    </ul>
+
+  </div>
 
   <div class="col-md-15 table-responsive mt-md-0 mt-4">
     <table id="especial2" class="tabla2" style="margin-top: 15px; width:98%; margin-bottom: 15px">

@@ -5,10 +5,12 @@
     $search = $connection->real_escape_string($search);
 
     $query = "SELECT * FROM users INNER JOIN data ON users.id=data.user_id WHERE users.username LIKE '" . $search . "%'";
-    $result = mysqli_query($connection, $query);
+    $query2 = "SELECT users.username FROM users INNER JOIN data ON users.id = data.blocked_by";
 
-    if (!$result) {
-      die('Query Error'. msqli_error($connection));    
+$result = mysqli_query($connection, $query);
+$result2 = mysqli_query($connection, $query2);
+    if (!$result && !$result2) {
+      die('Query Error'. msqli_error($connection));
     }
 
     $json = array();

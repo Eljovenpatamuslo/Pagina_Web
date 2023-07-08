@@ -27,7 +27,7 @@
       $uploadOk = 0;
     }
 
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "webp" ) {
       echo "La foto debe ser .jpg .png .jpeg o .gif";
       $uploadOk = 0;
     }

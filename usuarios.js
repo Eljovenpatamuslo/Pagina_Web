@@ -29,9 +29,8 @@ $(document).ready(function () {
                     if(data.admin == 1){
                         template += `
                         <tr usersId="${users.id}">
-                        <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>
-                        <td>
-                        <button class="give-info">i</button>`
+                        <td><img class="funcionx2" src="Images/Users/${users.picture}" width="200" height="200"></td>
+                        <td>`
                         
                         if(users.admin == 1){
                             template += `&#9733; ${users.username} &#9733;</td>`
@@ -64,7 +63,7 @@ $(document).ready(function () {
                             template += `No puedes realizar ninguna acciÓn`;
                         }
                         template +=`</button>
-                        
+                        <button class="give-info">info</button>
                                 </td>
                             </td>
                         </tr>
@@ -85,7 +84,7 @@ $(document).ready(function () {
                     }else{
                         template += `
                         <tr usersId="${users.id}">
-                        <td><img src="Images/Users/${users.picture}" width="200" height="200"></td>`
+                        <td><img class="funcionx2" src="Images/Users/${users.picture}" width="200" height="200"></td>`
                         if(users.admin == 1){
                             template += `<td>&#9733; ${users.username} &#9733;</td>`
                         }else{

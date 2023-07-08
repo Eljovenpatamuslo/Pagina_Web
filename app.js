@@ -16,20 +16,23 @@ $.ajax({
 });
 
 $(document).ready(function () {
+    var select = document.getElementById("filtro");
+    let filtro = select.options[select.selectedIndex].value;
 
     let edit = false;
-    fetchTasks ('');
+    fetchTasks ('',filtro);
     
     $('#search').keyup(function (e) {
         let search = $(this).val();
-        fetchTasks(search);
+        fetchTasks(search, filtro);
     });
 
-    function fetchTasks (search) {
+    function fetchTasks (search, filtro) {
         $.ajax({
             url: 'PHP/task-list.php',
             type: 'POST',
-            data: {search: search},
+            data: {search: search,
+                   filtro: filtro},
             success: function (response) {
                 let tasks = JSON.parse(response);
                 let template = '';
@@ -125,5 +128,10 @@ $(document).ready(function () {
                 console.log(jqXHR);
             }
         });      
+    });
+    
+    $(document).on('click', '.option', function () {
+        document.getElementById('search').value = '';
+        fetchTasks ('',filtro);
     });
 });

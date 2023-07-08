@@ -25,6 +25,15 @@
   overflow: hidden;
 }
 
+.encabezado2{
+  display: grid;
+  grid-template-columns: 8fr;
+  grid-gap: 24px;
+  margin: 10px 400px 100px 400px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
 .barraLogin{
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 2fr 2fr 3fr;
@@ -211,6 +220,23 @@ img.funcionx {
   filter: grayscale(100%);
 }
 
+img.funcionx2 {
+  transition: all 0.5s ease;
+  scale: 100%;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  filter: grayscale(0%);
+}
+
+.funcionx2:hover{
+  scale: 110%;
+  transition: all 0.5s ease;
+  filter: grayscale(100%);
+}
+
+
+
 
 .funciony{
   place-self: center;
@@ -235,6 +261,7 @@ html {
 }
 
 body {
+  line-height: inherit !important;
   margin:0;
 }
 

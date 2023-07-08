@@ -31,8 +31,6 @@
   font-size: 20px;
   border-radius: 15px;
   animation: only-border 5s ease infinite;
-
-
 }
 
 .cajaLista{
@@ -134,6 +132,23 @@
 
 .cajaMedia {
   display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  margin:auto;
+  padding: 30px;
+  border-collapse: collapse;
+  color: white;
+  animation: columna_sup 5s ease infinite;
+  width: 50%;
+  height: 100%;
+  font-size: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.cajaMedia2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   flex-direction: column;
   row-gap: 25px;
   margin:auto;
